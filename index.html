@@ -1,12 +1,597 @@
 <!DOCTYPE html>
-  <html lang="de">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>London & Oxford Trip 2026</title>
-  </head>
-  <body>
-      <h1>London & Oxford Trip 2026</h1>
-      <p>Coming soon...</p>
-  </body>
-  </html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>London &amp; Oxford 2026 | Marion • Markus • Martin</title>
+    <meta name="description" content="Reiseplan für London &amp; Oxford - 30. April bis 3. Mai 2026">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --gold: #c9a227;
+            --text: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --card: #0f0f23;
+            --success: #4ade80;
+            --warning: #fbbf24;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text); line-height: 1.6; }
+        .bg-animation { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(ellipse at 20% 80%, rgba(233, 69, 96, 0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(201, 162, 39, 0.1) 0%, transparent 50%), var(--primary); }
+        header { padding: 2rem 1rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); background: linear-gradient(135deg, var(--text) 0%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; }
+        .travelers { display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+        .traveler { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(255,255,255,0.05); border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); }
+        .traveler-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; }
+        nav { position: sticky; top: 0; background: rgba(26, 26, 46, 0.95); backdrop-filter: blur(10px); z-index: 100; padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; }
+        .nav-btn { padding: 0.6rem 1.2rem; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--text-muted); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-family: inherit; font-size: 0.9rem; }
+        .nav-btn:hover, .nav-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+        main { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+        .section { display: none; animation: fadeIn 0.5s ease; }
+        .section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .day-card { background: var(--card); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; }
+        .day-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(to bottom, var(--accent), var(--gold)); }
+        .day-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+        .day-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); }
+        .day-date { background: rgba(233, 69, 96, 0.2); color: var(--accent); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
+        .location-image { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.1); }
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: rgba(255,255,255,0.1); }
+        .timeline-item { position: relative; margin-bottom: 2rem; padding-left: 1.5rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 3px solid var(--card); }
+        .timeline-time { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .timeline-content h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--text); }
+        .timeline-content p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0.5rem; }
+        .tag { display: inline-block; padding: 0.2rem 0.6rem; background: rgba(255,255,255,0.1); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; margin-top: 0.5rem; }
+        .tag.food { background: rgba(74, 222, 128, 0.2); color: var(--success); }
+        .tag.drink { background: rgba(233, 69, 96, 0.2); color: var(--accent); }
+        .tag.transport { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+        .tag.highlight { background: rgba(251, 191, 36, 0.2); color: var(--warning); }
+        .restaurant-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .restaurant-card { background: var(--card); border-radius: 12px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.1); transition: transform 0.3s ease; }
+        .restaurant-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .restaurant-image { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.1); }
+        .restaurant-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 0.5rem; }
+        .restaurant-type { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem; }
+        .restaurant-detail { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; background: var(--accent); color: white; text-decoration: none; border-radius: 6px; font-size: 0.9rem; margin-top: 1rem; border: none; cursor: pointer; }
+        .btn:hover { background: #d63d56; }
+        .btn-secondary { background: rgba(255,255,255,0.1); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+        .checklist { background: var(--card); border-radius: 12px; padding: 1.5rem; margin-top: 2rem; }
+        .checklist-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer; transition: background 0.2s ease; }
+        .checklist-item:hover { background: rgba(255,255,255,0.03); }
+        .checklist-item:last-child { border-bottom: none; }
+        .checkbox { width: 24px; height: 24px; border: 2px solid var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .checklist-item.checked .checkbox { background: var(--accent); }
+        .checklist-item.checked .checkbox::after { content: '✓'; color: white; font-weight: bold; }
+        .checklist-text { flex: 1; }
+        .checklist-text h4 { font-size: 1rem; margin-bottom: 0.2rem; }
+        .checklist-text p { font-size: 0.85rem; color: var(--text-muted); }
+        .priority { padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; flex-shrink: 0; }
+        .priority.high { background: rgba(233, 69, 96, 0.2); color: var(--accent); }
+        .priority.medium { background: rgba(251, 191, 36, 0.2); color: var(--warning); }
+        .priority.low { background: rgba(74, 222, 128, 0.2); color: var(--success); }
+        .backup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .backup-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1rem; }
+        .backup-card h4 { color: var(--warning); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .backup-card p { font-size: 0.9rem; color: var(--text); }
+        .backup-card a { color: var(--accent); text-decoration: none; font-size: 0.85rem; }
+        footer { text-align: center; padding: 3rem 1rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); font-size: 0.9rem; }
+        @media (max-width: 768px) { .day-header { flex-direction: column; align-items: flex-start; } .timeline { padding-left: 1.5rem; } .travelers { gap: 1rem; } .location-image { height: 150px; } }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <header>
+        <h1>London &amp; Oxford</h1>
+        <p class="subtitle">30. April – 3. Mai 2026</p>
+        <div class="travelers">
+            <div class="traveler"><div class="traveler-avatar">M</div><span>Marion</span></div>
+            <div class="traveler"><div class="traveler-avatar">M</div><span>Markus</span></div>
+            <div class="traveler"><div class="traveler-avatar">M</div><span>Martin</span></div>
+        </div>
+    </header>
+    <nav>
+        <div class="nav-container">
+            <button class="nav-btn active" onclick="showSection('plan')">📅 Tagesplan</button>
+            <button class="nav-btn" onclick="showSection('restaurants')">🍽️ Restaurants</button>
+            <button class="nav-btn" onclick="showSection('checklist')">✅ Checkliste</button>
+            <button class="nav-btn" onclick="showSection('backup')">🚨 Backup</button>
+        </div>
+    </nav>
+    <main>
+        <section id="plan" class="section active">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Donnerstag – Anreise</h2>
+                    <span class="day-date">30.04.2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:25</div>
+                        <div class="timeline-content">
+                            <h3>✈️ Ankunft London Heathrow</h3>
+                            <p>Flug BA 795 aus Ljubljana, Terminal 3</p>
+                            <span class="tag transport">Flug</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">20:30</div>
+                        <div class="timeline-content">
+                            <h3>🚇 Transfer zum Hotel</h3>
+                            <p>Heathrow Express oder Tube nach Victoria Station</p>
+                            <span class="tag transport">ÖPNV</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">21:00</div>
+                        <div class="timeline-content">
+                            <h3>🏨 Check-in The Z Hotel Victoria</h3>
+                            <p>5 Lower Belgrave Street, Westminster, London SW1W 0NR</p>
+                            <span class="tag">Hotel</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">21:30</div>
+                        <div class="timeline-content">
+                            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800" alt="The Goring Bar" class="location-image">
+                            <h3>🍸 Cocktails @ The Goring Bar</h3>
+                            <p>15 Beeston Place, 5 Min. Fußweg vom Hotel. Legendärer Hotelbar, klassisch britisch.</p>
+                            <span class="tag drink">Cocktails</span>
+                            <span class="tag highlight">Empfohlen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Freitag – Little Venice &amp; Mamma Mia</h2>
+                    <span class="day-date">01.05.2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:30</div>
+                        <div class="timeline-content">
+                            <h3>🍳 Frühstück @ A. Wong</h3>
+                            <p>70 Wilton Road, 3 Min. Fußweg. Kreatives asiatisch-britisches Frühstück vom Michelin-Sterne-Koch.</p>
+                            <span class="tag food">Frühstück</span>
+                            <span class="tag highlight">Michelin</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">10:30</div>
+                        <div class="timeline-content">
+                            <h3>🛶 Little Venice</h3>
+                            <p>Entspannte Wasser-Oase mit Narrowboats, Kanalspaziergang, optionale Bootsfahrt</p>
+                            <span class="tag highlight">Sightseeing</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:00</div>
+                        <div class="timeline-content">
+                            <h3>🥗 Mittagessen in Little Venice</h3>
+                            <p>Waterside Café – leichtes Lunch mit Kanalblick</p>
+                            <span class="tag food">Lunch</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:00</div>
+                        <div class="timeline-content">
+                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800" alt="The Orangery Kensington Palace" class="location-image">
+                            <h3>🫖 High Tea @ The Orangery, Kensington Palace</h3>
+                            <p>Royaler Rahmen im Kensington Gardens. Klassische Scones, Sandwiches, Pastries. Unbedingt reservieren!</p>
+                            <span class="tag food">High Tea</span>
+                            <span class="tag highlight">Royal</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:30</div>
+                        <div class="timeline-content">
+                            <h3>🚇 Transfer zum West End</h3>
+                            <p>Tube Richtung Covent Garden</p>
+                            <span class="tag transport">ÖPNV</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">19:30</div>
+                        <div class="timeline-content">
+                            <h3>🎭 Mamma Mia @ Novello Theatre</h3>
+                            <p>Aldwych Theatre, Aldwych, London WC2B 4DF. Stalls Row R, Seats 11-12-13</p>
+                            <span class="tag highlight">Musical</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">22:15</div>
+                        <div class="timeline-content">
+                            <h3>🍝 Spätes Abendessen @ J Sheekey</h3>
+                            <p>28-32 St Martin's Court, Covent Garden. Ikonisches Seafood-Restaurant mit Oyster Bar.</p>
+                            <span class="tag food">Dinner</span>
+                            <span class="tag highlight">Seafood</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Samstag – Oxford Tagesausflug</h2>
+                    <span class="day-date">02.05.2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:00</div>
+                        <div class="timeline-content">
+                            <h3>🥐 Frühstück @ GAIL's Bakery</h3>
+                            <p>128 Wilton Road – schnell &amp; gut vor der Zugfahrt. Exzellentes Sauerteigbrot.</p>
+                            <span class="tag food">Frühstück</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:30</div>
+                        <div class="timeline-content">
+                            <h3>🚂 Zug nach Oxford</h3>
+                            <p>Abfahrt Paddington Station, Fahrtzeit ca. 1 Stunde</p>
+                            <span class="tag transport">Zug</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">10:15</div>
+                        <div class="timeline-content">
+                            <img src="https://images.unsplash.com/photo-1564507296791-7e2f2d07a02f?w=800" alt="Christ Church College Oxford" class="location-image">
+                            <h3>🏛️ Christ Church College</h3>
+                            <p>Harry-Potter-Feeling in der Great Hall, atemberaubende Architektur. Eintritt ~£16.</p>
+                            <span class="tag highlight">Harry Potter</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:00</div>
+                        <div class="timeline-content">
+                            <h3>📚 Bodleian Library &amp; Radcliffe Camera</h3>
+                            <p>Das runde Wahrzeichen von Oxford, optional geführte Tour</p>
+                            <span class="tag highlight">Kultur</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:00</div>
+                        <div class="timeline-content">
+                            <h3>🍽️ Mittagessen @ Covered Market</h3>
+                            <p>Lokale Stände: Moo-Moo's (Burger) oder Alpha Bar (Wraps). Entspannte Marktatmosphäre.</p>
+                            <span class="tag food">Lunch</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:30</div>
+                        <div class="timeline-content">
+                            <h3>🌿 Oxford Botanic Garden</h3>
+                            <p>Einer der ältesten wissenschaftlichen Gärten der Welt. Eintritt ~£6.</p>
+                            <span class="tag highlight">Natur</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">16:00</div>
+                        <div class="timeline-content">
+                            <img src="https://images.unsplash.com/photo-1543835755-446e23e5b7df?w=800" alt="Punting Oxford Cherwell" class="location-image">
+                            <h3>🛶 Punting am Cherwell</h3>
+                            <p>Selbst paddeln (~£25/Boot) oder sich paddeln lassen (~£30). Die entspannteste Art Oxford zu erleben!</p>
+                            <span class="tag highlight">Activity</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:00</div>
+                        <div class="timeline-content">
+                            <h3>🍺 Abendessen @ The Trout Inn</h3>
+                            <p>195 Godstow Road, 15 Min. Fußweg vom Stadtrand. Legendärer Pub am Fluss mit traditioneller Küche.</p>
+                            <span class="tag food">Dinner</span>
+                            <span class="tag highlight">Pub</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">19:30</div>
+                        <div class="timeline-content">
+                            <h3>🚂 Rückzug nach London</h3>
+                            <p>Ankunft Victoria ca. 21:00 Uhr</p>
+                            <span class="tag transport">Zug</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Sonntag – Richmond Park &amp; Abreise</h2>
+                    <span class="day-date">03.05.2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">08:30</div>
+                        <div class="timeline-content">
+                            <h3>🍳 Frühstück @ The Ivy Victoria</h3>
+                            <p>66 Victoria Street, 5 Min. Fußweg. Klassisch britisch, elegante Atmosphäre.</p>
+                            <span class="tag food">Frühstück</span>
+                            <span class="tag highlight">Klassiker</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">09:30</div>
+                        <div class="timeline-content">
+                            <img src="https://images.unsplash.com/photo-1558293842-c0fd3db86157?w=800" alt="Isabella Plantation Richmond Park" class="location-image">
+                            <h3>🌸 Isabella Plantation @ Richmond Park</h3>
+                            <p>Verwunschener Waldgarten mit Frühlingsblüte und Kirschbäumen. Perfektes Entspannungs-Finale.</p>
+                            <span class="tag highlight">Natur</span>
+                            <span class="tag highlight">Frühling</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:30</div>
+                        <div class="timeline-content">
+                            <h3>🚇 Transfer nach Marylebone</h3>
+                            <p>Tube Richtung Marylebone Station</p>
+                            <span class="tag transport">ÖPNV</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:30</div>
+                        <div class="timeline-content">
+                            <h3>🛍️ Marylebone High Street</h3>
+                            <p>Entspanntes Bummeln, coolere und individuellere Geschäfte abseits des Mainstream-Tourismus</p>
+                            <span class="tag highlight">Shopping</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">15:00</div>
+                        <div class="timeline-content">
+                            <h3>☕ Kaffee @ The Monocle Café</h3>
+                            <p>18 Chiltern Street. Minimalistisch, exzellenter Kaffee, perfekte Pause vor dem Abflug.</p>
+                            <span class="tag drink">Kaffee</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">16:00</div>
+                        <div class="timeline-content">
+                            <h3>🧳 Rückkehr zum Hotel &amp; Gepäck holen</h3>
+                            <p>Letzte Vorbereitungen für die Heimreise</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">17:15</div>
+                        <div class="timeline-content">
+                            <h3>✈️ Abflug London Heathrow</h3>
+                            <p>Flug BA 794 nach Ljubljana, Terminal 3</p>
+                            <span class="tag transport">Flug</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="restaurants" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Alle Restaurants &amp; Kontakte</h2>
+                </div>
+                <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <h3 class="restaurant-name">A. Wong</h3>
+                        <p class="restaurant-type">🍳 Frühstück • Asiatisch-Britisch • Michelin</p>
+                        <div class="restaurant-detail">📍 70 Wilton Road, London (3 Min. vom Hotel)</div>
+                        <div class="restaurant-detail">📞 +44 20 7828 8931</div>
+                        <div class="restaurant-detail">⏰ Frühstück meist möglich, Wochenende vorab sicherer</div>
+                        <a href="https://www.awong.co.uk" class="btn" target="_blank">Reservieren →</a>
+                    </div>
+                    <div class="restaurant-card">
+                        <h3 class="restaurant-name">GAIL's Bakery</h3>
+                        <p class="restaurant-type">🥐 Frühstück • Bäckerei • Casual</p>
+                        <div class="restaurant-detail">📍 128 Wilton Road, London (4 Min. vom Hotel)</div>
+                        <div class="restaurant-detail">ℹ️ Keine Reservierung nötig – Walk-in</div>
+                        <div class="restaurant-detail">⚠️ 9-10 Uhr Schlange möglich – früher kommen!</div>
+                        <span class="btn btn-secondary">Walk-in only</span>
+                    </div>
+                    <div class="restaurant-card">
+                        <h3 class="restaurant-name">The Ivy Victoria</h3>
+                        <p class="restaurant-type">🍳 Frühstück • Britisch • Elegant</p>
+                        <div class="restaurant-detail">📍 66 Victoria Street, London (5 Min. vom Hotel)</div>
+                        <div class="restaurant-detail">📞 +44 20 3972 0990</div>
+                        <div class="restaurant-detail">⏰ Sonntagmorgen beliebt – Reservierung empfohlen</div>
+                        <a href="https://theivyrestaurants.com" class="btn" target="_blank">Reservieren →</a>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800" alt="The Orangery" class="restaurant-image">
+                        <h3 class="restaurant-name">The Orangery</h3>
+                        <p class="restaurant-type">🫖 High Tea • Royal • Traditionell</p>
+                        <div class="restaurant-detail">📍 Kensington Palace, Kensington Gardens</div>
+                        <div class="restaurant-detail">📞 +44 20 3166 6113</div>
+                        <div class="restaurant-detail">🚨 ZWINGEND RESERVIEREN! Tage im Voraus</div>
+                        <div class="restaurant-detail">💰 ~£35-45 pro Person</div>
+                        <a href="https://www.hrp.org.uk/kensington-palace/whats-on/the-orangery/" class="btn" target="_blank">JETZT Reservieren →</a>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=800" alt="The Goring Bar" class="restaurant-image">
+                        <h3 class="restaurant-name">The Goring Bar</h3>
+                        <p class="restaurant-type">🍸 Cocktails • Hotelbar • Klassisch</p>
+                        <div class="restaurant-detail">📍 15 Beeston Place, London (5 Min. vom Hotel)</div>
+                        <div class="restaurant-detail">📞 +44 20 7396 9000</div>
+                        <div class="restaurant-detail">⏰ Bar-Bereich Walk-in möglich, ab 21h voller</div>
+                        <a href="https://www.thegoring.com/dining/the-bar/" class="btn" target="_blank">Reservieren →</a>
+                    </div>
+                    <div class="restaurant-card">
+                        <h3 class="restaurant-name">J Sheekey</h3>
+                        <p class="restaurant-type">🍝 Dinner • Seafood • Ikone</p>
+                        <div class="restaurant-detail">📍 28-32 St Martin's Court, Covent Garden</div>
+                        <div class="restaurant-detail">📞 +44 20 7240 2565</div>
+                        <div class="restaurant-detail">ℹ️ Oyster Bar Walk-in möglich, Restaurant reservieren</div>
+                        <a href="https://www.j-sheekey.co.uk" class="btn" target="_blank">Reservieren →</a>
+                    </div>
+                    <div class="restaurant-card">
+                        <h3 class="restaurant-name">The Trout Inn</h3>
+                        <p class="restaurant-type">🍺 Dinner • Pub • Flussblick</p>
+                        <div class="restaurant-detail">📍 195 Godstow Road, Oxford (15 Min. Fußweg)</div>
+                        <div class="restaurant-detail">📞 +44 1865 510930</div>
+                        <div class="restaurant-detail">🚨 ZWINGEND RESERVIEREN! Sehr beliebt</div>
+                        <a href="https://www.thetroutoxford.co.uk" class="btn" target="_blank">JETZT Reservieren →</a>
+                    </div>
+                    <div class="restaurant-card">
+                        <h3 class="restaurant-name">The Monocle Café</h3>
+                        <p class="restaurant-type">☕ Kaffee • Minimalistisch • Design</p>
+                        <div class="restaurant-detail">📍 18 Chiltern Street, Marylebone</div>
+                        <div class="restaurant-detail">ℹ️ Keine Reservierung nötig – Walk-in</div>
+                        <div class="restaurant-detail">⏰ Perfekte Pause vor dem Abflug</div>
+                        <span class="btn btn-secondary">Walk-in only</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="checklist" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Reservierungs-Checkliste</h2>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Klicke zum Abhaken – Status wird gespeichert</p>
+                <div class="checklist">
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>The Orangery High Tea reservieren</h4><p>Kensington Palace – am wichtigsten, oft ausgebucht</p></div>
+                        <span class="priority high">SOFORT</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>The Trout Inn Oxford reservieren</h4><p>Samstagabend, sehr beliebt – unbedingt vorab</p></div>
+                        <span class="priority high">Diese Woche</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>J Sheekey reservieren</h4><p>Alternativ: Oyster Bar als Walk-in Backup planen</p></div>
+                        <span class="priority medium">1-2 Wochen vorher</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>The Goring Bar reservieren</h4><p>Donnerstagabend, Bar-Bereich meist flexibel</p></div>
+                        <span class="priority low">1 Woche vorher</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>The Ivy Victoria Frühstück</h4><p>Sonntagmorgen – sicherheitshalber reservieren</p></div>
+                        <span class="priority low">3-4 Tage vorher</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>A. Wong Frühstück</h4><p>Freitagmorgen – meist möglich, aber sicherer vorab</p></div>
+                        <span class="priority low">3-4 Tage vorher</span>
+                    </div>
+                </div>
+            </div>
+            <div class="day-card" style="margin-top: 2rem;">
+                <div class="day-header">
+                    <h2 class="day-title">Packliste &amp; Vorbereitung</h2>
+                </div>
+                <div class="checklist">
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Reisepässe prüfen</h4><p>Noch mindestens 6 Monate gültig?</p></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Reiseversicherung</h4><p>Abdeckung für UK-Städtereise</p></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>GB-Steckeradapter</h4><p>3-polige Stecker für UK</p></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Kontaktlos-Karte aktivieren</h4><p>London: Oyster Card oder Kontaktlos-Zahlung</p></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Handy-Roaming</h4><p>EU-Roaming gilt nicht mehr automatisch in UK</p></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Wetter-App checken</h4><p>Londoner Frühlingswetter = Schichtprinzip</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="backup" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Backup-Plan</h2>
+                </div>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Falls etwas ausfällt oder ausgebucht ist</p>
+                <div class="backup-grid">
+                    <div class="backup-card">
+                        <h4>🫖 Falls The Orangery ausgebucht</h4>
+                        <p><strong>Fortnum &amp; Mason</strong><br>Diamond Jubilee Tea Salon, Piccadilly<br><a href="https://www.fortnumandmason.com" target="_blank">fortnumandmason.com</a></p>
+                    </div>
+                    <div class="backup-card">
+                        <h4>🍺 Falls The Trout Inn voll</h4>
+                        <p><strong>The Bear Inn</strong><br>Oxford Altstadt, historischer Pub<br>Weniger touristisch, authentisch<br>📞 +44 1865 241 177</p>
+                    </div>
+                    <div class="backup-card">
+                        <h4>🍝 Falls J Sheekey kein Tisch</h4>
+                        <p><strong>Barrafina</strong><br>Dean Street, Soho<br>Spanische Tapas, keine Reservierung<br>Warteliste vor Ort</p>
+                    </div>
+                    <div class="backup-card">
+                        <h4>🍸 Falls The Goring Bar voll</h4>
+                        <p><strong>Swift</strong><br>Soho, moderne Cocktails<br>2 Locations, Bar-Seite meist Walk-in<br><a href="https://www.swiftbars.com" target="_blank">swiftbars.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="day-card" style="margin-top: 2rem;">
+                <div class="day-header">
+                    <h2 class="day-title">Wichtige Links &amp; Apps</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">🚇</div>
+                        <div class="timeline-content"><h3>Transport for London (TfL)</h3><p>tfl.gov.uk – Routenplaner, Live-Status, Fahrpreise</p></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">🚂</div>
+                        <div class="timeline-content"><h3>Trainline</h3><p>trainline.com – Zugtickets London ↔ Oxford</p></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">🗺️</div>
+                        <div class="timeline-content"><h3>Citymapper</h3><p>App für ÖPNV-Navigation in London</p></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">🌤️</div>
+                        <div class="timeline-content"><h3>BBC Weather</h3><p>bbc.co.uk/weather – Zuverlässigste UK-Wettervorhersage</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Gemacht mit <span style="color: var(--accent);">♥</span> für Marion, Markus &amp; Martin</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">London &amp; Oxford • 30.04. – 03.05.2026</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => { section.classList.remove('active'); });
+            document.querySelectorAll('.nav-btn').forEach(btn => { btn.classList.remove('active'); });
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+        function toggleCheck(element) {
+            element.classList.toggle('checked');
+            const items = document.querySelectorAll('.checklist-item');
+            const checked = Array.from(items).map(item => item.classList.contains('checked'));
+            localStorage.setItem('londonChecklist', JSON.stringify(checked));
+        }
+        window.addEventListener('load', () => {
+            const saved = localStorage.getItem('londonChecklist');
+            if (saved) {
+                const checked = JSON.parse(saved);
+                const items = document.querySelectorAll('.checklist-item');
+                items.forEach((item, index) => { if (checked[index]) item.classList.add('checked'); });
+            }
+        });
+    </script>
+</body>
+</html>
