@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vilnius & Riga 2026 | Markus · Martin</title>
+        <meta
+            name="description"
+            content="Reiseplan für Vilnius & Riga - 4. bis 7. Juni 2026"
+        />
+        <meta name="theme-color" content="#1A3A34" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="Vilnius 2026" />
+        <link rel="manifest" href="../manifest.json" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🇱🇹%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <style>
+            :root {
+                /* Baltic Amber & Forest Palette */
+                --theme-primary: #1a3a34; /* Deep Forest Green */
+                --theme-primary-light: #2a5a52;
+                --theme-primary-dark: #0d1f1b;
+                --theme-accent: #ffbf00; /* Amber Gold */
+                --theme-accent-light: #ffd700;
+                --theme-accent-dark: #cc9900;
+                --theme-secondary: #708090; /* Cool Stone Grey */
+                --theme-secondary-light: #8a9aab;
+                --theme-accent-opacity: rgba(255, 191, 0, 0.05);
+                --theme-secondary-opacity: rgba(112, 128, 144, 0.04);
+                --theme-accent-opacity-heavy: rgba(255, 191, 0, 0.15);
+                --hero-url: url("https://images.unsplash.com/photo-1588145716155-703358055001?w=1920&q=80");
+            }
+
+            .timeline::before {
+                background: linear-gradient(
+                    to bottom,
+                    var(--theme-accent),
+                    rgba(112, 128, 144, 0.1)
+                );
+            }
+
+            .day-card::before {
+                background: linear-gradient(
+                    180deg,
+                    var(--theme-accent) 0%,
+                    var(--theme-primary) 100%
+                );
+            }
+        </style>
+    </head>
+    <body data-trip-id="vilnius2026">
+        <!-- ===== HEADER ===== -->
+        <header>
+            <div class="hero-bg"></div>
+            <div class="hero-pattern"></div>
+            <div class="hero-image" id="heroImage"></div>
+            <div class="hero-overlay"></div>
+            <div class="header-content">
+                <p class="header-eyebrow">Ein baltisches Abenteuer</p>
+                <h1>Vilnius <span class="header-ampersand">&</span> Riga</h1>
+                <p class="subtitle">4. – 7. Juni 2026</p>
+                <hr class="gold-rule" />
+                <div class="travelers">
+                    <div class="traveler">
+                        <span class="traveler-dot"></span>Markus
+                    </div>
+                    <div class="traveler">
+                        <span class="traveler-dot"></span>Martin
+                    </div>
+                </div>
+                <div
+                    class="countdown-container"
+                    data-start="2026-06-04T13:45:00"
+                    data-end="2026-06-07T13:00:00"
+                >
+                    <div class="countdown" id="countdown"></div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+            </div>
+        </header>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <a
+                    href="../index.html"
+                    class="nav-btn"
+                    style="
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    "
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        style="width: 14px; height: 14px"
+                    >
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Home
+                </a>
+                <button
+                    class="nav-btn active"
+                    onclick="showSection('plan', this)"
+                >
+                    Reiseplan
+                </button>
+                <button
+                    class="nav-btn"
+                    onclick="showSection('restaurants', this)"
+                >
+                    Entdeckungen
+                </button>
+                <button
+                    class="nav-btn"
+                    onclick="showSection('checklist', this)"
+                >
+                    Checkliste
+                </button>
+                <button class="nav-btn" onclick="showSection('backup', this)">
+                    Flug & Hotel
+                </button>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN ===== -->
+        <main>
+            <!-- ==================== REISEPLAN ==================== -->
+            <section id="plan" class="section active">
+                <div
+                    class="trip-status"
+                    id="tripStatus"
+                    style="display: none"
+                ></div>
+
+                <!-- DAY 1 -->
+                <div class="day-card" data-date="2026-06-04">
+                    <div class="day-header">
+                        <h2 class="day-title">
+                            Donnerstag – Anreise über Riga
+                        </h2>
+                        <span class="day-date">4. Juni 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">13:45</div>
+                            <div class="timeline-content">
+                                <h3>Abflug Ljubljana (LJU)</h3>
+                                <p>
+                                    Flug BT 478 mit Air Baltic nach Riga. Dauer:
+                                    2h 15m. Airbus A220-300.
+                                </p>
+                                <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">17:00</div>
+                            <div class="timeline-content">
+                                <div
+                                    class="train-info"
+                                    style="
+                                        background: rgba(255, 191, 0, 0.05);
+                                        border-color: var(--theme-accent);
+                                    "
+                                >
+                                    <div class="train-info-header">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            style="stroke: var(--theme-accent)"
+                                        >
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline
+                                                points="12 6 12 12 16 14"
+                                            />
+                                        </svg>
+                                        3 Stunden Aufenthalt in Riga (RIX)
+                                    </div>
+                                    <p
+                                        style="
+                                            font-size: 0.85rem;
+                                            margin-top: 0.3rem;
+                                        "
+                                    >
+                                        Zeit für einen Snack am Flughafen oder
+                                        kurzes Entspannen.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:00</div>
+                            <div class="timeline-content">
+                                <h3>Weiterflug nach Vilnius</h3>
+                                <p>
+                                    Flug BT 347. Kurzer Sprung über 50 Minuten
+                                    nach Litauen.
+                                </p>
+                                <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:50</div>
+                            <div class="timeline-content">
+                                <h3>Ankunft Vilnius (VNO)</h3>
+                                <p>
+                                    Ankunft in der litauischen Hauptstadt.
+                                    Transfer zum Hotel in der Altstadt.
+                                </p>
+                                <span class="tag highlight">VNO Airport</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">21:30</div>
+                            <div class="timeline-content">
+                                <h3>Check-in Artis Centrum Hotels</h3>
+                                <p>
+                                    Totorių g. 23, Altstadt von Vilnius. Zimmer
+                                    mit Queensize-Bett und Balkon.
+                                </p>
+                                <div class="map-container">
+                                    <iframe
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=25.278%2C54.682%2C25.288%2C54.688&amp;layer=mapnik&amp;marker=54.685%2C25.283"
+                                    ></iframe>
+                                </div>
+                                <span class="tag highlight">Altstadt</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 2 -->
+                <div class="day-card" data-date="2026-06-05">
+                    <div class="day-header">
+                        <h2 class="day-title">Freitag – Vilnius Erkundung</h2>
+                        <span class="day-date">5. Juni 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">09:00</div>
+                            <div class="timeline-content">
+                                <h3>Frühstück im Hotel</h3>
+                                <p>
+                                    Stärkung für den ersten Tag in der barocken
+                                    Hauptstadt.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">10:30</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1590059393041-e941893c5d6e?w=800&q=80"
+                                    alt="Vilnius Old Town"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Altstadt-Spaziergang</h3>
+                                <p>
+                                    UNESCO-Weltkulturerbe. Besuch der Kathedrale
+                                    von Vilnius und des Großfürstlichen
+                                    Schlosses.
+                                </p>
+                                <span class="tag highlight">Kultur</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:00</div>
+                            <div class="timeline-content">
+                                <h3>Užupis – Die freie Republik</h3>
+                                <p>
+                                    Das Künstlerviertel von Vilnius mit eigener
+                                    Verfassung, Hymne und Präsident. Ein Muss
+                                    für jeden Besucher.
+                                </p>
+                                <span class="tag highlight">Užupis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 4 -->
+                <div class="day-card" data-date="2026-06-07">
+                    <div class="day-header">
+                        <h2 class="day-title">Sonntag – Heimreise über Riga</h2>
+                        <span class="day-date">7. Juni 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">05:35</div>
+                            <div class="timeline-content">
+                                <h3>Früher Abflug Vilnius (VNO)</h3>
+                                <p>
+                                    Flug BT 350 nach Riga. Kurzer Flug am frühen
+                                    Morgen.
+                                </p>
+                                <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">06:25</div>
+                            <div class="timeline-content">
+                                <div
+                                    class="train-info"
+                                    style="
+                                        background: rgba(255, 191, 0, 0.05);
+                                        border-color: var(--theme-accent);
+                                    "
+                                >
+                                    <div class="train-info-header">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            style="stroke: var(--theme-accent)"
+                                        >
+                                            <circle cx="12" cy="12" r="10" />
+                                            <polyline
+                                                points="12 6 12 12 16 14"
+                                            />
+                                        </svg>
+                                        5 Stunden, 20 Min. Aufenthalt in Riga
+                                        (RIX)
+                                    </div>
+                                    <p
+                                        style="
+                                            font-size: 0.85rem;
+                                            margin-top: 0.3rem;
+                                        "
+                                    >
+                                        Viel Zeit für ein ausgiebiges Frühstück
+                                        in Riga oder Entspannen in der Lounge.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">11:45</div>
+                            <div class="timeline-content">
+                                <h3>Heimflug nach Ljubljana</h3>
+                                <p>
+                                    Flug BT 477. Ankunft in Slowenien um 13:00
+                                    Uhr.
+                                </p>
+                                <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== ENTDECKUNGEN ==================== -->
+            <section id="restaurants" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Vorschläge für Vilnius</h2>
+                    </div>
+                    <p class="section-intro">
+                        Hier werden wir unsere kulinarischen Entdeckungen
+                        planen.
+                    </p>
+                    <div class="restaurant-grid">
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img
+                                    src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80"
+                                    alt="Lithuanian Food"
+                                    class="restaurant-image"
+                                    loading="lazy"
+                                />
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Lokys</h3>
+                                <p class="restaurant-type">
+                                    Traditionell · Wildgerichte · Altstadt
+                                </p>
+                                <p class="restaurant-description">
+                                    Eines der ältesten Restaurants in der Stadt,
+                                    bekannt für seine historischen Rezepte.
+                                </p>
+                                <a
+                                    href="https://lokys.lt/en/"
+                                    class="btn"
+                                    target="_blank"
+                                    >Website</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== CHECKLISTE ==================== -->
+            <section id="checklist" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Reise-Checkliste</h2>
+                    </div>
+                    <div class="checklist">
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Bolt App installieren</h4>
+                                <p>
+                                    Günstigste Art für Transfers in Vilnius &
+                                    Riga
+                                </p>
+                            </div>
+                            <span class="priority high">Vorab</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Online Check-in Air Baltic</h4>
+                                <p>BT 478 / BT 347 (24h vorher)</p>
+                            </div>
+                            <span class="priority high">3. Juni</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== FLUG & HOTEL ==================== -->
+            <section id="backup" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Buchungsdetails</h2>
+                    </div>
+                    <div class="emergency-card">
+                        <h4>Flüge (Air Baltic) – Buchung: 8IJSWG</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <rect
+                                        x="4"
+                                        y="3"
+                                        width="16"
+                                        height="16"
+                                        rx="2"
+                                    />
+                                    <path d="M4 11h16M8 3v18M16 3v18" />
+                                </svg>
+                                <div>
+                                    <strong>Hinflug (04.06.)</strong>BT 478
+                                    (LJU-RIX) 13:45<br />BT 347 (RIX-VNO) 20:00
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <rect
+                                        x="4"
+                                        y="3"
+                                        width="16"
+                                        height="16"
+                                        rx="2"
+                                    />
+                                    <path d="M4 11h16M8 3v18M16 3v18" />
+                                </svg>
+                                <div>
+                                    <strong>Rückflug (07.06.)</strong>BT 350
+                                    (VNO-RIX) 05:35<br />BT 477 (RIX-LJU) 11:45
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="emergency-card">
+                        <h4>Hotel – Artis Centrum Hotels</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                    />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <div>
+                                    <strong>Adresse</strong>Totorių g. 23,
+                                    Vilnius<br />+370 5 266 0366
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+                                    <path
+                                        d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                                    />
+                                </svg>
+                                <div>
+                                    <strong>Buchung: 5589835798</strong>Kosten:
+                                    € 364,80<br />Zahlung automatisch via Karte
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>Gemacht mit <span class="footer-heart">♥</span> für</p>
+            <p class="footer-names">Markus · Martin</p>
+            <p class="footer-date">Vilnius &amp; Riga · 04.06. – 07.06.2026</p>
+        </footer>
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>
