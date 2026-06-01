@@ -4,7 +4,7 @@ Eine statische Single-Page-Website zur Planung und Organisation einer 4-tägigen
 
 ## Projektübersicht
 
-Dies ist eine **rein statische HTML-Website** für drei Reisende (Marion, Markus, Martin). Die Seite dient als digitaler Reisebegleiter mit tagesgenauem Programm, Restaurantkontakten, interaktiven Checklisten und Backup-Plänen.
+Dies ist eine **rein statische HTML-Website** für drei Reisende (Martin & Markus). Die Seite dient als digitaler Reisebegleiter mit tagesgenauem Programm, Restaurantkontakten, interaktiven Checklisten und Backup-Plänen.
 
 **Sprache:** Deutsch (gesamter Inhalt ist auf Deutsch)  
 **Domain:** london.danicek.at (konfiguriert in `CNAME`)  
