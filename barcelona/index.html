@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Barcelona 2026 | Martin · Markus</title>
+        <meta
+            name="description"
+            content="Reiseplan für Barcelona – 23. bis 26. Oktober 2026"
+        />
+        <meta name="theme-color" content="#0A1628" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="Barcelona 2026" />
+        <meta property="og:title" content="Barcelona 2026" />
+        <meta
+            property="og:description"
+            content="Reiseplan für Barcelona – 23. bis 26. Oktober 2026"
+        />
+        <meta property="og:type" content="website" />
+        <link rel="manifest" href="../manifest.json" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🇪🇸%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <style>
+            :root {
+                /* Mediterranean / Spanish Palette */
+                --theme-primary: #0a1628;
+                --theme-primary-light: #1a2a42;
+                --theme-primary-dark: #050d18;
+                --theme-accent: #c9a962;
+                --theme-accent-light: #ddbb70;
+                --theme-accent-dark: #a68b4b;
+                --theme-secondary: #722f37;
+                --theme-secondary-light: #8b3a42;
+                --hero-url: url("https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?w=1920&q=80"); /* Sagrada Familia */
+            }
+        </style>
+    </head>
+    <body data-trip-id="barcelona2026">
+        <!-- ===== HEADER ===== -->
+        <header>
+            <div class="hero-bg"></div>
+            <div class="hero-pattern"></div>
+            <div class="hero-image" id="heroImage"></div>
+            <div class="hero-overlay"></div>
+            <div class="header-content">
+                <p class="header-eyebrow">Ein mediterranes Abenteuer in</p>
+                <h1>Barcelona</h1>
+                <p class="subtitle">23. – 26. Oktober 2026</p>
+                <hr class="gold-rule" />
+                <div class="travelers">
+                    <div class="traveler">
+                        <span class="traveler-dot"></span>Martin
+                    </div>
+                    <div class="traveler">
+                        <span class="traveler-dot"></span>Markus
+                    </div>
+                    <div class="traveler">
+                        <span class="traveler-dot"></span>Edith
+                    </div>
+                </div>
+                <div
+                    class="countdown-container"
+                    data-start="2026-10-23T16:45:00"
+                    data-end="2026-10-26T16:00:00"
+                >
+                    <div class="countdown" id="countdown"></div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+            </div>
+        </header>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <a
+                    href="../index.html"
+                    class="nav-btn"
+                    style="
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    "
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        style="width: 14px; height: 14px"
+                    >
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Home
+                </a>
+                <button
+                    class="nav-btn active"
+                    onclick="showSection('plan', this)"
+                >
+                    Tagesplan
+                </button>
+                <button class="nav-btn" onclick="showSection('hotels', this)">
+                    Hotel & Info
+                </button>
+                <button
+                    class="nav-btn"
+                    onclick="showSection('checklist', this)"
+                >
+                    Checkliste
+                </button>
+                <button
+                    class="nav-btn"
+                    onclick="showSection('impressum', this)"
+                >
+                    Impressum
+                </button>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN ===== -->
+        <main>
+            <!-- ==================== TAGESPLAN ==================== -->
+            <section id="plan" class="section active">
+                <!-- DAY 1 -->
+                <div class="day-card" data-date="2026-10-23">
+                    <div class="day-header">
+                        <h2 class="day-title">Freitag – Anreise</h2>
+                        <span class="day-date">23. Oktober 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">16:45</div>
+                            <div class="timeline-content">
+                                <h3>Abflug Salzburg (SZG)</h3>
+                                <p>
+                                    Eurowings Flug EW 4398 nach Barcelona (BCN).
+                                </p>
+                                <div class="flight-info">
+                                    <div class="flight-details">
+                                        <span>✈️ Flug: EW 4398</span>
+                                        <span>🆔 Bestätigung: ONTJ2K</span>
+                                        <span>💺 Seat: 2A</span>
+                                    </div>
+                                </div>
+                                <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">18:45</div>
+                            <div class="timeline-content">
+                                <h3>Ankunft Barcelona El Prat</h3>
+                                <p>Transfer zum Hotel HCC Montblanc.</p>
+                                <span class="tag transport">Ankunft</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:00</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1583779457094-0cfcf1114e4a?w=800&q=80"
+                                    alt="Barcelona Street"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Check-in Hotel HCC Montblanc</h3>
+                                <p>
+                                    Vía Laietana, 61, Ciutat Vella, 08003
+                                    Barcelona.
+                                </p>
+                                <span class="tag highlight">Hotel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 2 (Optional/Placeholder for content) -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">
+                            Samstag & Sonntag – Stadterkundung
+                        </h2>
+                        <span class="day-date">24. – 25. Oktober 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=800&q=80"
+                                    alt="Park Güell"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Gaudís Barcelona</h3>
+                                <p>
+                                    Besuch der Sagrada Familia, Park Güell und
+                                    Casa Batlló. Spaziergang durch das gotische
+                                    Viertel und Entspannen am Strand von
+                                    Barceloneta.
+                                </p>
+                                <span class="tag highlight">Sightseeing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 4 -->
+                <div class="day-card" data-date="2026-10-26">
+                    <div class="day-header">
+                        <h2 class="day-title">Montag – Abreise</h2>
+                        <span class="day-date">26. Oktober 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">12:00</div>
+                            <div class="timeline-content">
+                                <h3>Check-out Hotel</h3>
+                                <p>Letzter Vormittag in Barcelona.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">13:55</div>
+                            <div class="timeline-content">
+                                <h3>Abflug Barcelona (BCN)</h3>
+                                <p>
+                                    Eurowings Flug EW 4399 nach Salzburg (SZG).
+                                </p>
+                                <div class="flight-info">
+                                    <div class="flight-details">
+                                        <span>✈️ Flug: EW 4399</span>
+                                        <span>🆔 Bestätigung: ONTJ2K</span>
+                                        <span>💺 Seat: 2A</span>
+                                    </div>
+                                </div>
+                                <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">16:00</div>
+                            <div class="timeline-content">
+                                <h3>Ankunft Salzburg</h3>
+                                <p>Willkommen zuhause!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== HOTEL & INFO ==================== -->
+            <section id="hotels" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Unterkunft</h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
+                                    alt="Hotel"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>HCC Montblanc</h3>
+                                <p>
+                                    Vía Laietana, 61, Ciutat Vella, 08003
+                                    Barcelona, Spanien
+                                </p>
+                                <p>
+                                    <strong>Telefon:</strong> +34 933 43 55 55
+                                </p>
+                                <p><strong>Bestätigung:</strong> 6602003469</p>
+                                <div class="map-container">
+                                    <iframe
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=2.170%2C41.385%2C2.180%2C41.390&amp;layer=mapnik&amp;marker=41.387%2C2.175"
+                                    ></iframe>
+                                </div>
+                                <span class="tag highlight">Hotel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== CHECKLISTE ==================== -->
+            <section id="checklist" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Reise-Checkliste</h2>
+                    </div>
+                    <div class="checklist">
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Online Check-in</h4>
+                                <p>24h vor Abflug bei Eurowings</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Sagrada Familia Tickets</h4>
+                                <p>Frühzeitig online buchen!</p>
+                            </div>
+                            <span class="priority high">Wichtig</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Park Güell Tickets</h4>
+                                <p>Sonnenuntergang einplanen</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== IMPRESSUM ==================== -->
+            <section id="impressum" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Impressum</h2>
+                    </div>
+                    <div class="emergency-card">
+                        <p><strong>Verantwortlich für den Inhalt:</strong></p>
+                        <p>
+                            Martin Danicek<br />
+                            E-Mail: martin@danicek.at
+                        </p>
+
+                        <p style="margin-top: 1rem">
+                            <strong>Haftungsausschluss:</strong><br />
+                            Diese Website dient ausschließlich privaten Zwecken
+                            zur Koordination der Familienreise.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>Gemacht mit <span class="footer-heart">♥</span> für</p>
+            <p class="footer-names">Martin · Markus</p>
+            <p class="footer-date">Barcelona · 23.10. – 26.10.2026</p>
+        </footer>
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>

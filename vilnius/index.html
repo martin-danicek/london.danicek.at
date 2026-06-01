@@ -42,7 +42,7 @@
                 --theme-accent-opacity: rgba(255, 191, 0, 0.05);
                 --theme-secondary-opacity: rgba(112, 128, 144, 0.04);
                 --theme-accent-opacity-heavy: rgba(255, 191, 0, 0.15);
-                --hero-url: url("https://images.unsplash.com/photo-1588145716155-703358055001?w=1920&q=80");
+                --hero-url: url("https://images.unsplash.com/photo-1562602833-0f4ab2fc46e3?w=1920&q=80");
             }
 
             .timeline::before {
@@ -141,8 +141,11 @@
                 >
                     Checkliste
                 </button>
-                <button class="nav-btn" onclick="showSection('impressum', this)"> 
-                    Impressum 
+                <button
+                    class="nav-btn"
+                    onclick="showSection('impressum', this)"
+                >
+                    Impressum
                 </button>
                 <button class="nav-btn" onclick="showSection('backup', this)">
                     Flug &amp; Hotel
@@ -1267,24 +1270,39 @@
             </section>
 
             <!-- ==================== FLUG & HOTEL ==================== -->
-            <!-- ==================== IMPRESSUM ==================== --> 
-            <section id="impressum" class="section"> 
-                <div class="day-card"> 
-                    <div class="day-header"> 
-                        <h2 class="day-title">Impressum</h2> 
-                    </div> 
-                    <div class="emergency-card"> 
-                        <p><strong>Verantwortlich für den Inhalt:</strong></p> 
-                        <p>Martin Danicek<br> 
-                        E-Mail: martin@danicek.at</p> 
-                        
-                        <p style="margin-top: 1rem;"><strong>Haftungsausschluss:</strong><br> 
-                        Diese Website dient ausschließlich privaten Zwecken zur Koordination der Familienreise. Alle Informationen wurden nach bestem Wissen zusammengestellt, jedoch ohne Gewähr für Richtigkeit oder Aktualität der externen Links (Restaurants, Züge etc.).</p> 
-                        
-                        <p style="margin-top: 1rem;"><strong>Datenschutz:</strong><br> 
-                        Es werden keine personenbezogenen Daten von Besuchern erhoben oder gespeichert. Die Checklisten-Funktion nutzt den lokalen Speicher Ihres Browsers (localStorage), Daten verlassen niemals Ihr Gerät.</p> 
-                    </div> 
-                </div> 
+            <!-- ==================== IMPRESSUM ==================== -->
+            <section id="impressum" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Impressum</h2>
+                    </div>
+                    <div class="emergency-card">
+                        <p><strong>Verantwortlich für den Inhalt:</strong></p>
+                        <p>
+                            Martin Danicek<br />
+                            E-Mail: martin@danicek.at
+                        </p>
+
+                        <p style="margin-top: 1rem">
+                            <strong>Haftungsausschluss:</strong><br />
+                            Diese Website dient ausschließlich privaten Zwecken
+                            zur Koordination der Familienreise. Alle
+                            Informationen wurden nach bestem Wissen
+                            zusammengestellt, jedoch ohne Gewähr für Richtigkeit
+                            oder Aktualität der externen Links (Restaurants,
+                            Züge etc.).
+                        </p>
+
+                        <p style="margin-top: 1rem">
+                            <strong>Datenschutz:</strong><br />
+                            Es werden keine personenbezogenen Daten von
+                            Besuchern erhoben oder gespeichert. Die
+                            Checklisten-Funktion nutzt den lokalen Speicher
+                            Ihres Browsers (localStorage), Daten verlassen
+                            niemals Ihr Gerät.
+                        </p>
+                    </div>
+                </div>
             </section>
             <section id="backup" class="section">
                 <div class="day-card">

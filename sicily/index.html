@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sizilien Roadtrip 2026 | Martin · Markus</title>
+        <meta
+            name="description"
+            content="Sizilien Roadtrip – 22. Juli bis 8. August 2026"
+        />
+        <meta name="theme-color" content="#0A1628" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="Sizilien 2026" />
+        <meta property="og:title" content="Sizilien Roadtrip 2026" />
+        <meta
+            property="og:description"
+            content="18 Tage durch Sizilien – Von Palermo bis Taormina"
+        />
+        <meta property="og:type" content="website" />
+        <link rel="manifest" href="../manifest.json" />
+        <link
+            rel="icon"
+            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🇮🇹%3C/text%3E%3C/svg%3E"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+        <style>
+            :root {
+                /* Sicilian Summer Palette */
+                --theme-primary: #0a1628;
+                --theme-primary-light: #1a2a42;
+                --theme-accent: #c9a962;
+                --theme-secondary: #722f37;
+                --hero-url: url("https://images.unsplash.com/photo-1523594132173-05996328bc6e?w=1920&q=80"); /* Taormina */
+            }
+        </style>
+    </head>
+    <body data-trip-id="sicily2026">
+        <!-- ===== HEADER ===== -->
+        <header>
+            <div class="hero-bg"></div>
+            <div class="hero-pattern"></div>
+            <div class="hero-image" id="heroImage"></div>
+            <div class="hero-overlay"></div>
+            <div class="header-content">
+                <p class="header-eyebrow">Ein sizilianischer Sommertraum</p>
+                <h1>Sizilien Roadtrip</h1>
+                <p class="subtitle">22. Juli – 8. August 2026</p>
+                <hr class="gold-rule" />
+                <div class="travelers">
+                    <div class="traveler">
+                        <span class="traveler-dot"></span>Martin
+                    </div>
+                    <div class="traveler">
+                        <span class="traveler-dot"></span>Markus
+                    </div>
+                </div>
+                <div
+                    class="countdown-container"
+                    data-start="2026-07-22T05:45:00"
+                    data-end="2026-08-08T14:00:00"
+                >
+                    <div class="countdown" id="countdown"></div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 5v14M19 12l-7 7-7-7" />
+                </svg>
+            </div>
+        </header>
+
+        <!-- ===== NAVIGATION ===== -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <a
+                    href="../index.html"
+                    class="nav-btn"
+                    style="
+                        text-decoration: none;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    "
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        style="width: 14px; height: 14px"
+                    >
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Home
+                </a>
+                <button
+                    class="nav-btn active"
+                    onclick="showSection('plan', this)"
+                >
+                    Route
+                </button>
+                <button class="nav-btn" onclick="showSection('hotels', this)">
+                    Hotels
+                </button>
+                <button
+                    class="nav-btn"
+                    onclick="showSection('checklist', this)"
+                >
+                    Checkliste
+                </button>
+                <button
+                    class="nav-btn"
+                    onclick="showSection('impressum', this)"
+                >
+                    Impressum
+                </button>
+            </div>
+        </nav>
+
+        <!-- ===== MAIN ===== -->
+        <main>
+            <!-- ==================== TAGESPLAN ==================== -->
+            <section id="plan" class="section active">
+                <!-- Day 1: Anreise -->
+                <div class="day-card" data-date="2026-07-22">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 1: Anreise nach Palermo</h2>
+                        <span class="day-date">22. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">05:45</div>
+                            <div class="timeline-content">
+                                <h3>Abflug Klagenfurt (KLU)</h3>
+                                <p>
+                                    Flug OS 112 nach Wien. Weiter via Zürich
+                                    nach Palermo.
+                                </p>
+                                <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:00</div>
+                            <div class="timeline-content">
+                                <h3>Ankunft Palermo (PMO)</h3>
+                                <p>Transfer zum Quintocanto Hotel & Spa.</p>
+                                <span class="tag transport">Ankunft</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roadtrip Start -->
+                <div class="day-card" data-date="2026-07-24">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 3: Start des Roadtrips</h2>
+                        <span class="day-date">24. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">11:00</div>
+                            <div class="timeline-content">
+                                <h3>Mietwagen-Abholung</h3>
+                                <p>
+                                    Sunny Cars / Drivalia (Viale Francia 3/C,
+                                    Palermo).
+                                </p>
+                                <span class="tag transport">Auto</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:00</div>
+                            <div class="timeline-content">
+                                <h3>Fahrt nach Taormina</h3>
+                                <p>Check-in Casa Cuseni (3 Nächte).</p>
+                                <span class="tag highlight">Taormina</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Route Summary -->
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Die Route im Überblick</h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">22.07. – 24.07.</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1541329164087-0283eda68eda?w=800&q=80"
+                                    alt="Palermo"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Palermo</h3>
+                                <p>
+                                    2 Nächte im Quintocanto Hotel & Spa.
+                                    Altstadt, Streetfood & Kultur.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">24.07. – 27.07.</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1523594132173-05996328bc6e?w=800&q=80"
+                                    alt="Taormina"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Taormina</h3>
+                                <p>
+                                    3 Nächte im Casa Cuseni. Antikes Theater,
+                                    Isola Bella & Etna-Blick.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">27.07. – 30.07.</div>
+                            <div class="timeline-content">
+                                <h3>Puntarazzi (Ragusa)</h3>
+                                <p>
+                                    3 Nächte im Artemisia Resort. Sizilianischer
+                                    Barock & Ragusa Ibla.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">30.07. – 01.08.</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1565622837305-6f3803f2622a?w=800&q=80"
+                                    alt="Scala dei Turchi"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Realmonte (Agrigento)</h3>
+                                <p>
+                                    2 Nächte im Borgo Giallonardo. Tal der
+                                    Tempel & Scala dei Turchi.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">01.08. – 05.08.</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1552554625-2e69738d21ed?w=800&q=80"
+                                    alt="Marsala"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Marsala</h3>
+                                <p>
+                                    4 Nächte im Suite Beach B&B. Salinen, Wein &
+                                    Sonnenuntergänge.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">05.08. – 08.08.</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1590756254933-2873d72a83b6?w=800&q=80"
+                                    alt="Castellammare del Golfo"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Castellammare del Golfo</h3>
+                                <p>
+                                    3 Nächte im Atrium. Abschluss am Meer &
+                                    Zingaro Reservat.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Departure -->
+                <div class="day-card" data-date="2026-08-08">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 18: Rückreise</h2>
+                        <span class="day-date">8. August 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">07:40</div>
+                            <div class="timeline-content">
+                                <h3>Mietwagen-Rückgabe</h3>
+                                <p>Abgabe bei Drivalia am Flughafen Palermo.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">09:40</div>
+                            <div class="timeline-content">
+                                <h3>Rückflug nach Klagenfurt</h3>
+                                <p>
+                                    Via Wien (OS 564 / OS 109). Ankunft 14:00
+                                    Uhr.
+                                </p>
+                                <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== HOTELS ==================== -->
+            <section id="hotels" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Unsere Unterkünfte</h2>
+                    </div>
+                    <div class="restaurant-grid">
+                        <!-- Hotel 1 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">
+                                    Quintocanto Hotel & Spa
+                                </h3>
+                                <p class="restaurant-type">
+                                    Palermo · 2 Nächte
+                                </p>
+                                <p class="restaurant-detail">
+                                    Corso Vittorio Emanuele 310, 90134 Palermo
+                                </p>
+                                <p class="restaurant-detail">
+                                    📞 +39 091 584913
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Hotel 2 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Casa Cuseni</h3>
+                                <p class="restaurant-type">
+                                    Taormina · 3 Nächte
+                                </p>
+                                <p class="restaurant-detail">
+                                    Via Leonardo da Vinci 5-7, 98039 Taormina
+                                </p>
+                                <p class="restaurant-detail">
+                                    📞 +39 0942 558111
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Hotel 3 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">
+                                    Artemisia Resort
+                                </h3>
+                                <p class="restaurant-type">
+                                    Puntarazzi · 3 Nächte
+                                </p>
+                                <p class="restaurant-detail">
+                                    Via Enrico Caruso 13, 97100 Puntarazzi
+                                </p>
+                                <p class="restaurant-detail">
+                                    📞 +39 0932 642575
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Hotel 4 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">
+                                    Borgo Giallonardo
+                                </h3>
+                                <p class="restaurant-type">
+                                    Realmonte · 2 Nächte
+                                </p>
+                                <p class="restaurant-detail">
+                                    Contrada Giallonardo, 92010 Realmonte
+                                </p>
+                                <p class="restaurant-detail">
+                                    📞 +39 338 2886469
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Hotel 5 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">
+                                    Suite Beach B&B and Resort
+                                </h3>
+                                <p class="restaurant-type">
+                                    Marsala · 4 Nächte
+                                </p>
+                                <p class="restaurant-detail">
+                                    Contrada Berbaro 737/A, 91025 Marsala
+                                </p>
+                                <p class="restaurant-detail">
+                                    📞 +39 338 6911515
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Hotel 6 -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Atrium</h3>
+                                <p class="restaurant-type">
+                                    Castellammare del Golfo · 3 Nächte
+                                </p>
+                                <p class="restaurant-detail">
+                                    Via Antonio Vivaldi 44, 91014 Castellammare
+                                </p>
+                                <p class="restaurant-detail">
+                                    📞 +39 333 6327021
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== CHECKLISTE ==================== -->
+            <section id="checklist" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Checkliste</h2>
+                    </div>
+                    <div class="checklist">
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Internationaler Führerschein</h4>
+                                <p>Sicherheitshalber mitnehmen</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Kreditkarte für Mietwagen</h4>
+                                <p>Auf ausreichendes Limit achten (Kaution)</p>
+                            </div>
+                            <span class="priority high">Wichtig</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Restaurant-Reservierungen</h4>
+                                <p>
+                                    Besonders in Taormina und Palermo vorab
+                                    buchen
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== IMPRESSUM ==================== -->
+            <section id="impressum" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Impressum</h2>
+                    </div>
+                    <div class="emergency-card">
+                        <p><strong>Verantwortlich für den Inhalt:</strong></p>
+                        <p>
+                            Martin Danicek<br />
+                            E-Mail: martin@danicek.at
+                        </p>
+
+                        <p style="margin-top: 1rem">
+                            <strong>Haftungsausschluss:</strong><br />
+                            Diese Website dient ausschließlich privaten Zwecken
+                            zur Koordination der Familienreise.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>Gemacht mit <span class="footer-heart">♥</span> für</p>
+            <p class="footer-names">Martin · Markus</p>
+            <p class="footer-date">Sizilien · 22.07. – 08.08.2026</p>
+        </footer>
+
+        <script src="../js/main.js"></script>
+    </body>
+</html>
