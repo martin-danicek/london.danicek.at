@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Barcelona 2026 | Martin · Markus</title>
+        <title>Barcelona 2026 | Martin · Markus · Edith</title>
         <meta
             name="description"
-            content="Reiseplan für Barcelona – 23. bis 26. Oktober 2026"
+            content="Reiseplan für Barcelona – 23. bis 26. Oktober 2026. Mit echten Restaurant-Tipps, Insider-Adressen und Sehenswürdigkeiten abseits der Massen."
         />
         <meta name="theme-color" content="#0A1628" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -18,7 +18,7 @@
         <meta property="og:title" content="Barcelona 2026" />
         <meta
             property="og:description"
-            content="Reiseplan für Barcelona – 23. bis 26. Oktober 2026"
+            content="Barcelona mit echten Insider-Tipps – Gaudí, Tapas und katalanische Lebensfreude"
         />
         <meta property="og:type" content="website" />
         <link rel="manifest" href="../manifest.json" />
@@ -36,7 +36,6 @@
         <link rel="stylesheet" href="../css/style.css" />
         <style>
             :root {
-                /* Mediterranean / Spanish Palette */
                 --theme-primary: #0a1628;
                 --theme-primary-light: #1a2a42;
                 --theme-primary-dark: #050d18;
@@ -45,7 +44,42 @@
                 --theme-accent-dark: #a68b4b;
                 --theme-secondary: #722f37;
                 --theme-secondary-light: #8b3a42;
-                --hero-url: url("https://images.unsplash.com/photo-1539333302071-f8e8cdce0929?w=1920&q=80"); /* Eixample Aerial */
+                --hero-url: url("https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=1920&q=80");
+            }
+            .current-day {
+                border: 2px solid var(--theme-accent) !important;
+                box-shadow: 0 0 30px rgba(201, 169, 98, 0.2) !important;
+            }
+            .live-badge {
+                background: var(--theme-secondary);
+                color: #fff;
+                padding: 0.2rem 0.6rem;
+                border-radius: 2px;
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-left: 0.5rem;
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0%,
+                100% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.7;
+                }
+            }
+            .trip-status {
+                text-align: center;
+                padding: 0.8rem;
+                background: rgba(114, 47, 55, 0.08);
+                border: 1px solid rgba(114, 47, 55, 0.15);
+                border-radius: 2px;
+                margin-bottom: 2rem;
+                font-size: 0.9rem;
+                color: var(--theme-secondary);
+                display: none;
             }
         </style>
     </head>
@@ -117,8 +151,14 @@
                 >
                     Tagesplan
                 </button>
+                <button
+                    class="nav-btn"
+                    onclick="showSection('restaurants', this)"
+                >
+                    Restaurants
+                </button>
                 <button class="nav-btn" onclick="showSection('hotels', this)">
-                    Hotel & Info
+                    Hotel &amp; Info
                 </button>
                 <button
                     class="nav-btn"
@@ -126,23 +166,24 @@
                 >
                     Checkliste
                 </button>
-                <button
-                    class="nav-btn"
-                    onclick="showSection('impressum', this)"
-                >
-                    Impressum
+                <button class="nav-btn" onclick="showSection('backup', this)">
+                    Backup
                 </button>
             </div>
         </nav>
 
         <!-- ===== MAIN ===== -->
         <main>
+            <div class="trip-status" id="tripStatus"></div>
+
             <!-- ==================== TAGESPLAN ==================== -->
             <section id="plan" class="section active">
                 <!-- DAY 1 -->
                 <div class="day-card" data-date="2026-10-23">
                     <div class="day-header">
-                        <h2 class="day-title">Freitag – Anreise</h2>
+                        <h2 class="day-title">
+                            Freitag – Anreise &amp; Erstes Tapas-Erlebnis
+                        </h2>
                         <span class="day-date">23. Oktober 2026</span>
                     </div>
                     <div class="timeline">
@@ -152,6 +193,7 @@
                                 <h3>Abflug Salzburg (SZG)</h3>
                                 <p>
                                     Eurowings Flug EW 4398 nach Barcelona (BCN).
+                                    Direktflug ca. 2 Stunden.
                                 </p>
                                 <div class="flight-info">
                                     <div class="flight-details">
@@ -167,12 +209,46 @@
                             <div class="timeline-time">18:45</div>
                             <div class="timeline-content">
                                 <h3>Ankunft Barcelona El Prat</h3>
-                                <p>Transfer zum Hotel HCC Montblanc.</p>
+                                <p>
+                                    Aerobus oder Taxi zum Hotel HCC Montblanc im
+                                    Barri Gòtic. Ca. 30–40 Minuten.
+                                </p>
                                 <span class="tag transport">Ankunft</span>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-time">20:00</div>
+                            <div class="timeline-time">20:30</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=800&q=80"
+                                    alt="Barri Gòtic"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Check-in &amp; Abendessen im El Born</h3>
+                                <p>
+                                    Das HCC Montblanc liegt perfekt zwischen
+                                    Barri Gòtic und El Born. Zum Abendessen
+                                    empfohlen:
+                                    <strong>Bar del Pla</strong> (Carrer de
+                                    Montcada 2) – der Crispy Beef Cheek ist
+                                    legendär! Reservierung nötig.
+                                </p>
+                                <span class="tag food">Tapas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DAY 2 -->
+                <div class="day-card" data-date="2026-10-24">
+                    <div class="day-header">
+                        <h2 class="day-title">Samstag – Gaudís Meisterwerke</h2>
+                        <span class="day-date">24. Oktober 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">09:00</div>
                             <div class="timeline-content">
                                 <img
                                     src="https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?w=800&q=80"
@@ -180,27 +256,102 @@
                                     class="location-image"
                                     loading="lazy"
                                 />
-                                <h3>Check-in Hotel HCC Montblanc</h3>
+                                <h3>Sagrada Familia – Früher Besuch</h3>
                                 <p>
-                                    Vía Laietana, 61, Ciutat Vella, 08003
-                                    Barcelona.
+                                    Antoni Gaudís unvollendetes Meisterwerk. Der
+                                    Lichteinfall am Morgen durch die
+                                    Buntglasfenster ist atemberaubend.
+                                    <strong
+                                        >Ticket unbedingt online im Voraus
+                                        kaufen</strong
+                                    >
+                                    – ausgebucht ist die Regel!
                                 </p>
-                                <span class="tag highlight">Hotel</span>
+                                <a
+                                    href="https://sagradafamilia.org"
+                                    target="_blank"
+                                    class="btn"
+                                    >Tickets →</a
+                                >
+                                <span class="tag highlight">Must-See</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">12:00</div>
+                            <div class="timeline-content">
+                                <h3>Spaziergang Passeig de Gràcia</h3>
+                                <p>
+                                    Barcelonas schönste Prachtstraße. Vorbei an
+                                    <strong>Casa Batlló</strong> und
+                                    <strong>Casa Milà (La Pedrera)</strong> –
+                                    zwei weitere Gaudí-Ikonen. Für den
+                                    Innenbesuch ebenfalls Tickets vorab buchen.
+                                </p>
+                                <span class="tag highlight">Architektur</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">13:30</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80"
+                                    alt="La Boquería"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>
+                                    Mittagessen auf dem Mercado de la Boquería
+                                </h3>
+                                <p>
+                                    Der berühmteste Markt der Stadt direkt an
+                                    der Rambla. Frische Fruchtsäfte,
+                                    Iberico-Schinken, Meeresfrüchte-Bar und
+                                    spanische Käse.
+                                </p>
+                                <span class="tag food">Markt</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">16:00</div>
+                            <div class="timeline-content">
+                                <h3>Casa Batlló besichtigen</h3>
+                                <p>
+                                    Das „Haus der Knochen" mit seiner
+                                    wellenförmigen Fassade. Die Dachterrasse mit
+                                    dem Drachenrücken ist ein Highlight.
+                                    Audio-Guide inklusive.
+                                </p>
+                                <span class="tag highlight">Gaudí</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:00</div>
+                            <div class="timeline-content">
+                                <h3>Abendessen bei Tapeo</h3>
+                                <p>
+                                    Im Herzen von El Born. Lively Barkeepers,
+                                    2000er Hip-Hop und kreative Tapas. Der Beef
+                                    Burger mit Foie und Wild Mushroom Mayonnaise
+                                    ist ein Traum.
+                                    <strong>Reservierung empfohlen!</strong>
+                                </p>
+                                <span class="tag food">Tapas</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- DAY 2 (Optional/Placeholder for content) -->
-                <div class="day-card">
+                <!-- DAY 3 -->
+                <div class="day-card" data-date="2026-10-25">
                     <div class="day-header">
                         <h2 class="day-title">
-                            Samstag & Sonntag – Stadterkundung
+                            Sonntag – Park Güell, Bunkers &amp; Altstadt
                         </h2>
-                        <span class="day-date">24. – 25. Oktober 2026</span>
+                        <span class="day-date">25. Oktober 2026</span>
                     </div>
                     <div class="timeline">
                         <div class="timeline-item">
+                            <div class="timeline-time">08:30</div>
                             <div class="timeline-content">
                                 <img
                                     src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?w=800&q=80"
@@ -208,14 +359,77 @@
                                     class="location-image"
                                     loading="lazy"
                                 />
-                                <h3>Gaudís Barcelona</h3>
+                                <h3>Park Güell zur Öffnung</h3>
                                 <p>
-                                    Besuch der Sagrada Familia, Park Güell und
-                                    Casa Batlló. Spaziergang durch das gotische
-                                    Viertel und Entspannen am Strand von
-                                    Barceloneta.
+                                    Gaudís Märchenpark mit der berühmten
+                                    Mosaik-Echse und der geschwungenen Bank.
+                                    <strong
+                                        >Ticket unbedingt im Vorau
+                                        buchen</strong
+                                    >
+                                    – begrenzte Kapazität! Der
+                                    Sonnenaufgang-Besuch lohnt sich besonders.
                                 </p>
-                                <span class="tag highlight">Sightseeing</span>
+                                <span class="tag highlight">Gaudí</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">11:00</div>
+                            <div class="timeline-content">
+                                <h3>Brunch im Milk Bar &amp; Bistro</h3>
+                                <p>
+                                    Australisch inspiriertes Café im Gòtic.
+                                    Extensive Brunch-Karte – von Eggs Benedict
+                                    bis Pancakes. Perfekt für einen entspannten
+                                    Sonntag.
+                                </p>
+                                <span class="tag food">Brunch</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:00</div>
+                            <div class="timeline-content">
+                                <h3>Barri Gòtic erkunden</h3>
+                                <p>
+                                    Die älteste Stadt Barcelonas mit römischen
+                                    Mauern, der Kathedrale und verwinkelten
+                                    Gassen.
+                                    <strong>Els Quatre Gats</strong> besuchen –
+                                    Picassos ehemaliges Stammcafé, heute eher
+                                    Museum. Für Kaffee okay, Essen meiden!
+                                </p>
+                                <span class="tag highlight">Geschichte</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">17:00</div>
+                            <div class="timeline-content">
+                                <h3>Aufstieg zu den Bunkers del Carmel</h3>
+                                <p>
+                                    Der
+                                    <strong>beste Blick über Barcelona</strong>
+                                    – und gratis! Ehemaliger Flak-Bunker mit
+                                    360-Grad-Panorama auf Sagrada Família, Torre
+                                    Glòries und das Meer.
+                                    <strong>Tipp:</strong> 30 Minuten vor
+                                    Sonnenuntergang da sein, Picknick
+                                    mitbringen!
+                                </p>
+                                <span class="tag highlight">Aussicht</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:30</div>
+                            <div class="timeline-content">
+                                <h3>Tapas-Crawl im El Born</h3>
+                                <p>
+                                    <strong>Bodega La Puntual</strong> (Arroz de
+                                    Pluma Ibérica!) und
+                                    <strong>Bar Brutal</strong> (Burrata mit
+                                    Zucchini, natürliche Weine).
+                                    Abwechslungsreicher Abschluss des Tages.
+                                </p>
+                                <span class="tag drink">Abend</span>
                             </div>
                         </div>
                     </div>
@@ -224,15 +438,54 @@
                 <!-- DAY 4 -->
                 <div class="day-card" data-date="2026-10-26">
                     <div class="day-header">
-                        <h2 class="day-title">Montag – Abreise</h2>
+                        <h2 class="day-title">Montag – Strand &amp; Abreise</h2>
                         <span class="day-date">26. Oktober 2026</span>
                     </div>
                     <div class="timeline">
                         <div class="timeline-item">
+                            <div class="timeline-time">09:00</div>
+                            <div class="timeline-content">
+                                <img
+                                    src="https://images.unsplash.com/photo-1476973422084-e0fa66ff9456?w=800&q=80"
+                                    alt="Barceloneta"
+                                    class="location-image"
+                                    loading="lazy"
+                                />
+                                <h3>Morgenstimmung an der Barceloneta</h3>
+                                <p>
+                                    Letzter Spaziergang am Strand, frische
+                                    Churros mit Schokolade an einer Strandbar.
+                                    Im Oktober ist das Meer oft noch warm genug
+                                    für einen kurzen Schwimm.
+                                </p>
+                                <span class="tag highlight">Meer</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">11:00</div>
+                            <div class="timeline-content">
+                                <h3>
+                                    Letzter Kaffee im Jardins de Rubió i Lluch
+                                </h3>
+                                <p>
+                                    Versteckter Innenhof mitten im quirligen
+                                    Raval – unter blühenden Orangenbäumen mit
+                                    katalanischen Opas Schach spielen
+                                    beobachten. Ein stiller Abschied von
+                                    Barcelona.
+                                </p>
+                                <span class="tag drink">Kaffee</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
                             <div class="timeline-time">12:00</div>
                             <div class="timeline-content">
                                 <h3>Check-out Hotel</h3>
-                                <p>Letzter Vormittag in Barcelona.</p>
+                                <p>
+                                    Gepäck im Hotel lassen oder mitnehmen.
+                                    Letzte Einkäufe in den Gassen des Gòtic.
+                                </p>
+                                <span class="tag transport">Check-out</span>
                             </div>
                         </div>
                         <div class="timeline-item">
@@ -241,6 +494,7 @@
                                 <h3>Abflug Barcelona (BCN)</h3>
                                 <p>
                                     Eurowings Flug EW 4399 nach Salzburg (SZG).
+                                    Ankunft 16:00 Uhr.
                                 </p>
                                 <div class="flight-info">
                                     <div class="flight-details">
@@ -256,7 +510,181 @@
                             <div class="timeline-time">16:00</div>
                             <div class="timeline-content">
                                 <h3>Ankunft Salzburg</h3>
-                                <p>Willkommen zuhause!</p>
+                                <p>
+                                    Willkommen zuhause! Bis zum nächsten
+                                    Abenteuer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- ==================== RESTAURANTS ==================== -->
+            <section id="restaurants" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Restaurant-Empfehlungen</h2>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">
+                        Authentische Adressen von Einheimischen – keine Touristenfallen an der Rambla.
+                    </p>
+                    <div class="restaurant-grid">
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=800&q=80" alt="Tapas" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Bar del Pla</h3>
+                                <p class="restaurant-type">El Born · Moderne Tapas</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Carrer de Montcada 2, 08003 Barcelona
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                        Mo–Sa 12:00–23:00, So geschlossen
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Reservierung für Dinner zwingend!</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Der <strong>Crispy Beef Cheek</strong> ist ein Meisterwerk – karamellisierte Kruste, zartes Inneres. Auch: Mushroom Carpaccio mit Wasabi-Vinaigrette und Squid Ink Croquetas. Exzellente Natural Wines.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80" alt="Tapas Bar" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Bar La Plata</h3>
+                                <p class="restaurant-type">Barri Gòtic · Historisch</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Carrer de la Mercè 28, 08002 Barcelona
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                        Mo–Sa 10:00–15:30 &amp; 18:30–23:00
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Seit <strong>1945</strong> dieselben vier Tapas! Ferran Adrià und Anthony Bourdain waren begeistert. Bestellen: Pescadito Frito, Pintxo de Butifarra, Tomaten-Zwiebel-Salat, Sardellen. Keine Sitzplätze – stehen und genießen!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Tapeo</h3>
+                                <p class="restaurant-type">El Born · Kreative Tapas</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Carrer de Montcada 29, 08003 Barcelona
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Bar-Plätze auch reserviert – vorher anrufen!</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Lively Atmosphäre, 2000er Hip-Hop, kreative Tapas. Der Beef Burger mit Foie und Wild Mushroom Mayonnaise ist ein Must-Try. Kleines Lokal, deshalb unbedingt reservieren.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Bodega La Puntual</h3>
+                                <p class="restaurant-type">El Born · Historische Bodega</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Carrer de Montcada 22, 08003 Barcelona
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Authentische Bodega mit erstklassigen Zutaten. Am Eingang eine lockere Oyster Bar, im Inneren Tische für Gruppen. Unbedingt den <strong>Arroz de Pluma Ibérica</strong> probieren!
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Sensi Tapas</h3>
+                                <p class="restaurant-type">Barri Gòtic · Kreativ</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Carrer del Regomir 4, 08002 Barcelona
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Reservierung empfohlen</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Dschungel-Vibes im Gòtic! Tuna Tartare wird vor den Augen angezündet. Patatas Bravas, Oxtail, Tintenfisch-Paella – alles mit einem Twist.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Cañete</h3>
+                                <p class="restaurant-type">El Raval · Michelin-Stern</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Carrer de la Boqueria 19, 08002 Barcelona
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Michelin-Stern 2025 – reservieren!</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    „F*CK YOUR DIET" steht an der Tür – das sagt alles. Große Tapas-Auswahl, Bar-Sitzplätze mit Küchenblick. Der Chocolate Coulant mit Kokos-Eis ist ein Muss für Schokoladen-Fans.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Milk Bar &amp; Bistro</h3>
+                                <p class="restaurant-type">Barri Gòtic · Brunch</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Carrer d'en Gignàs 21, 08002 Barcelona
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                        Täglich 09:00–16:30 (Brunch)
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Einer der besten Brunch-Spots der Stadt. Sechs verschiedene Eggs Benedict, drei Pancake-Varianten, Huevos Rancheros – perfekt für einen entspannten Sonntag.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Els Quatre Gats</h3>
+                                <p class="restaurant-type">Barri Gòtic · Historisch</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Carrer de Montsió 3, 08002 Barcelona
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    <strong>Nur für Kaffee oder Bier besuchen!</strong> Picassos erstes Atelier und Lieblingscafé. Das Interieur mit Ramon Casas' Gemälden ist spektakulär. Das Essen ist überbewertet und teuer – aber einen Kaffee um 11 Uhr wert.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -267,32 +695,40 @@
             <section id="hotels" class="section">
                 <div class="day-card">
                     <div class="day-header">
-                        <h2 class="day-title">Unterkunft</h2>
+                        <h2 class="day-title">Unterkunft &amp; Anreise</h2>
                     </div>
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-content">
-                                <img
-                                    src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80"
-                                    alt="Hotel"
-                                    class="location-image"
-                                    loading="lazy"
-                                />
+                                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Hotel" class="location-image" loading="lazy" />
                                 <h3>HCC Montblanc</h3>
-                                <p>
-                                    Vía Laietana, 61, Ciutat Vella, 08003
-                                    Barcelona, Spanien
-                                </p>
-                                <p>
-                                    <strong>Telefon:</strong> +34 933 43 55 55
-                                </p>
+                                <p>Vía Laietana, 61, Ciutat Vella, 08003 Barcelona, Spanien</p>
+                                <p><strong>Telefon:</strong> +34 933 43 55 55</p>
                                 <p><strong>Bestätigung:</strong> 6602003469</p>
+                                <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                                    Perfekte Lage zwischen Barri Gòtic und El Born. Zu Fuß zur Rambla, zur Kathedrale und zum Hafen. Metro Jaume I in 3 Minuten.
+                                </p>
                                 <div class="map-container">
-                                    <iframe
-                                        src="https://www.openstreetmap.org/export/embed.html?bbox=2.170%2C41.385%2C2.180%2C41.390&amp;layer=mapnik&amp;marker=41.387%2C2.175"
-                                    ></iframe>
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=2.170%2C41.385%2C2.180%2C41.390&amp;layer=mapnik&amp;marker=41.387%2C2.175"></iframe>
                                 </div>
                                 <span class="tag highlight">Hotel</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Transfer vom Flughafen</h3>
+                                <p><strong>Aerobus A1:</strong> Alle 10 Minuten, €6,90, ca. 35 Minuten bis Plaça Catalunya. Von dort 10 Minuten Fußweg zum Hotel.</p>
+                                <p><strong>Taxi:</strong> Ca. €35–40, 25–30 Minuten. Fixpreis vom Flughafen.</p>
+                                <p><strong>Metro L9:</strong> Zum Zentrum umsteigen in Torrassa (L1/L5) oder Collblanc (L5).</p>
+                                <span class="tag transport">Anreise</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h3>Öffentliche Verkehrsmittel</h3>
+                                <p><strong>T-Casual:</strong> 10 Fahrten für €12,15 – gilt für Metro, Bus und Tram. Nicht auf dem Flughafen-Transport.</p>
+                                <p><strong>Holá BCN:</strong> Tageskarte ab €15,20 für unbegrenzte Fahrten – lohnt sich ab 3 Fahrten pro Tag.</p>
+                                <span class="tag transport">Metro</span>
                             </div>
                         </div>
                     </div>
@@ -309,15 +745,15 @@
                         <div class="checklist-item" onclick="toggleCheck(this)">
                             <div class="checkbox"></div>
                             <div class="checklist-text">
-                                <h4>Online Check-in</h4>
-                                <p>24h vor Abflug bei Eurowings</p>
+                                <h4>Online Check-in Eurowings</h4>
+                                <p>24h vor Abflug durchführen</p>
                             </div>
                         </div>
                         <div class="checklist-item" onclick="toggleCheck(this)">
                             <div class="checkbox"></div>
                             <div class="checklist-text">
                                 <h4>Sagrada Familia Tickets</h4>
-                                <p>Frühzeitig online buchen!</p>
+                                <p>Mindestens 2–3 Tage vorher online kaufen! Morgenslot 09:00 empfohlen.</p>
                             </div>
                             <span class="priority high">Wichtig</span>
                         </div>
@@ -325,31 +761,94 @@
                             <div class="checkbox"></div>
                             <div class="checklist-text">
                                 <h4>Park Güell Tickets</h4>
-                                <p>Sonnenuntergang einplanen</p>
+                                <p>Begrenzte Kapazität – im Vorau buchen. Zeitfenster 08:30 Uhr.</p>
+                            </div>
+                            <span class="priority high">Wichtig</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Casa Batlló oder Casa Milà</h4>
+                                <p>Mindestens einen Gaudí-Innenbesuch vorab buchen</p>
+                            </div>
+                            <span class="priority medium">Empfohlen</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Restaurant-Reservierungen</h4>
+                                <p>Bar del Pla, Tapeo oder Cañete vorab reservieren</p>
+                            </div>
+                            <span class="priority medium">Empfohlen</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Bequeme Schuhe</h4>
+                                <p>Barcelona erkundet man zu Fuß – viel Laufen garantiert!</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Jackenschutz</h4>
+                                <p>Im Oktober können Abende kühl werden (15–18°C)</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>T-Casual oder Holá BCN Karte</h4>
+                                <p>Am Flughafen oder an Metro-Stationen kaufen</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- ==================== IMPRESSUM ==================== -->
-            <section id="impressum" class="section">
+            <!-- ==================== BACKUP ==================== -->
+            <section id="backup" class="section">
                 <div class="day-card">
                     <div class="day-header">
-                        <h2 class="day-title">Impressum</h2>
+                        <h2 class="day-title">Notfall &amp; nützliche Infos</h2>
                     </div>
                     <div class="emergency-card">
-                        <p><strong>Verantwortlich für den Inhalt:</strong></p>
-                        <p>
-                            Martin Danicek<br />
-                            E-Mail: martin@danicek.at
-                        </p>
+                        <p><strong>🚨 Notruf:</strong> 112 (EU-weit)</p>
+                        <p><strong>🏥 Krankenhaus nahe:</strong> Hospital de la Santa Creu i Sant Pau</p>
+                        <p><strong>🛡️ Polizei:</strong> 091 (National) / 092 (Mossos d'Esquadra)</p>
+                        <p style="margin-top: 1rem;"><strong>Flugdetails Hin:</strong></p>
+                        <p>EW 4398 SZG–BCN 16:45</p>
+                        <p style="margin-top: 1rem;"><strong>Flugdetails Rück:</strong></p>
+                        <p>EW 4399 BCN–SZG 13:55</p>
+                        <p>Bestätigung: ONTJ2K</p>
+                    </div>
 
-                        <p style="margin-top: 1rem">
-                            <strong>Haftungsausschluss:</strong><br />
-                            Diese Website dient ausschließlich privaten Zwecken
-                            zur Koordination der Familienreise.
-                        </p>
+                    <h3 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem; color: var(--theme-primary);">Insider-Tipps</h3>
+                    <div class="backup-grid">
+                        <div class="backup-card">
+                            <h4>🌅 Bunkers del Carmel</h4>
+                            <p>Frühzeitig vor Sonnenuntergang da sein – der Spot ist kein Geheimtipp mehr. Picknick und Getränke mitbringen. Bus 24 oder 92 fährt hinauf.</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>🍊 Jardins de Rubió i Lluch</h4>
+                            <p>Versteckter Innenhof im Raval mit Orangenbäumen, Schach-spielenden Opas und dem gemütlichen Bar El Jardí. Perfekt für eine Auszeit.</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>🏖️ Strand-Vergleich</h4>
+                            <p>Barceloneta = voll und touristisch. <strong>Platja del Bogatell</strong> weiter nördlich ist entspannter und voller Locals.</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>🎨 Street Art Poblenou</h4>
+                            <p>Metro bis Selva de Mar, dann Carrer de Pere IV entlang. Weniger Touristen, große Murals, coole Cafés.</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>💶 Trinkgeld</h4>
+                            <p>In Bars nicht üblich. In Restaurants rundet man auf oder gibt 5–10%. Bedienung wird meist fair bezahlt.</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>📱 Internet</h4>
+                            <p>EU-Roaming gilt. In vielen Restaurants und Cafés gibt es kostenloses WLAN.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -358,7 +857,7 @@
         <!-- ===== FOOTER ===== -->
         <footer>
             <p>Gemacht mit <span class="footer-heart">♥</span> für</p>
-            <p class="footer-names">Martin · Markus</p>
+            <p class="footer-names">Martin · Markus · Edith</p>
             <p class="footer-date">Barcelona · 23.10. – 26.10.2026</p>
         </footer>
 

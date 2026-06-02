@@ -6,7 +6,7 @@
         <title>Sizilien Roadtrip 2026 | Martin · Markus</title>
         <meta
             name="description"
-            content="Sizilien Roadtrip – 22. Juli bis 8. August 2026"
+            content="Sizilien Roadtrip – 22. Juli bis 8. August 2026. Von Palermo bis Taormina mit echten Tipps & Empfehlungen."
         />
         <meta name="theme-color" content="#0A1628" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -18,7 +18,7 @@
         <meta property="og:title" content="Sizilien Roadtrip 2026" />
         <meta
             property="og:description"
-            content="18 Tage durch Sizilien – Von Palermo bis Taormina"
+            content="18 Tage durch Sizilien – Von Palermo bis Taormina mit echten Tipps & Empfehlungen"
         />
         <meta property="og:type" content="website" />
         <link rel="manifest" href="../manifest.json" />
@@ -36,12 +36,41 @@
         <link rel="stylesheet" href="../css/style.css" />
         <style>
             :root {
-                /* Sicilian Summer Palette */
                 --theme-primary: #0a1628;
                 --theme-primary-light: #1a2a42;
                 --theme-accent: #c9a962;
                 --theme-secondary: #722f37;
-                --hero-url: url("https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?w=1920&q=80"); /* Taormina & Etna */
+                --hero-url: url("https://images.unsplash.com/photo-1534113414509-0eec2bfb493f?w=1920&q=80");
+            }
+            .current-day {
+                border: 2px solid var(--theme-accent) !important;
+                box-shadow: 0 0 30px rgba(201, 169, 98, 0.2) !important;
+            }
+            .live-badge {
+                background: var(--theme-secondary);
+                color: #fff;
+                padding: 0.2rem 0.6rem;
+                border-radius: 2px;
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-left: 0.5rem;
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
+            }
+            .trip-status {
+                text-align: center;
+                padding: 0.8rem;
+                background: rgba(114, 47, 55, 0.08);
+                border: 1px solid rgba(114, 47, 55, 0.15);
+                border-radius: 2px;
+                margin-bottom: 2rem;
+                font-size: 0.9rem;
+                color: var(--theme-secondary);
+                display: none;
             }
         </style>
     </head>
@@ -86,51 +115,26 @@
                 <a
                     href="../index.html"
                     class="nav-btn"
-                    style="
-                        text-decoration: none;
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                    "
+                    style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;"
                 >
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        style="width: 14px; height: 14px"
-                    >
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px">
                         <path d="M19 12H5M12 19l-7-7 7-7" />
                     </svg>
                     Home
                 </a>
-                <button
-                    class="nav-btn active"
-                    onclick="showSection('plan', this)"
-                >
-                    Route
-                </button>
-                <button class="nav-btn" onclick="showSection('hotels', this)">
-                    Hotels
-                </button>
-                <button
-                    class="nav-btn"
-                    onclick="showSection('checklist', this)"
-                >
-                    Checkliste
-                </button>
-                <button
-                    class="nav-btn"
-                    onclick="showSection('impressum', this)"
-                >
-                    Impressum
-                </button>
+                <button class="nav-btn active" onclick="showSection('plan', this)">Route</button>
+                <button class="nav-btn" onclick="showSection('restaurants', this)">Restaurants</button>
+                <button class="nav-btn" onclick="showSection('hotels', this)">Hotels</button>
+                <button class="nav-btn" onclick="showSection('checklist', this)">Checkliste</button>
+                <button class="nav-btn" onclick="showSection('backup', this)">Backup</button>
             </div>
         </nav>
 
         <!-- ===== MAIN ===== -->
         <main>
-            <!-- ==================== TAGESPLAN ==================== -->
+            <div class="trip-status" id="tripStatus"></div>
+
+            <!-- ==================== ROUTE / TAGESPLAN ==================== -->
             <section id="plan" class="section active">
                 <!-- Day 1: Anreise -->
                 <div class="day-card" data-date="2026-07-22">
@@ -143,39 +147,94 @@
                             <div class="timeline-time">05:45</div>
                             <div class="timeline-content">
                                 <h3>Abflug Klagenfurt (KLU)</h3>
-                                <p>
-                                    Flug OS 112 nach Wien. Weiter via Zürich
-                                    nach Palermo.
-                                </p>
+                                <p>Flug OS 112 nach Wien. Weiter via Zürich nach Palermo (PMO).</p>
                                 <span class="tag transport">Flug</span>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-time">14:00</div>
                             <div class="timeline-content">
-                                <h3>Ankunft Palermo (PMO)</h3>
-                                <p>Transfer zum Quintocanto Hotel & Spa.</p>
+                                <h3>Ankunft Palermo</h3>
+                                <p>Transfer zum Quintocanto Hotel & Spa. Erster Spaziergang durch die Altstadt.</p>
                                 <span class="tag transport">Ankunft</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">19:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1541329164087-0283eda68eda?w=800&q=80" alt="Quattro Canti Palermo" class="location-image" loading="lazy" />
+                                <h3>Aperitivo am Quattro Canti</h3>
+                                <p>Die prächtigen Barockfassaden der vier abgerundten Ecken – Palermos Herzstück. Dann Abendessen in einer der nahen Osterien.</p>
+                                <span class="tag highlight">Palermo</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Roadtrip Start -->
+                <!-- Day 2: Palermo -->
+                <div class="day-card" data-date="2026-07-23">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 2: Palermo erkunden</h2>
+                        <span class="day-date">23. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">09:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80" alt="Palermo Markt" class="location-image" loading="lazy" />
+                                <h3>Morgens auf dem Vucciria-Markt</h3>
+                                <p>Bunter Chaos-Markt mit lauten Verkäufern, exotischen Früchten und Streetfood. Anschließend zur Cattedrale di Palermo.</p>
+                                <span class="tag food">Streetfood</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">12:00</div>
+                            <div class="timeline-content">
+                                <h3>Mittagessen bei Focacceria San Francesco</h3>
+                                <p>Legende seit 1834 – die beste <em>focaccia</em> und <em>panelle</em> (Kichererbsen-Frittieren) der Stadt. Unbedingt probieren!</p>
+                                <span class="tag food">Must-Eat</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">15:00</div>
+                            <div class="timeline-content">
+                                <h3>Santa Maria dell'Ammiraglio &amp; Kalsa</h3>
+                                <p>Die berühmte Admiraltskirche mit byzantinischen Mosaiken an der Piazza Bellini. Spaziergang durch das trendige Kalsa-Viertel.</p>
+                                <span class="tag highlight">Kultur</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">18:00</div>
+                            <div class="timeline-content">
+                                <h3>Cannoli bei Pasticceria Cappello</h3>
+                                <p>Die wohl besten Cannoli Siziliens – knusprige Teigröhren mit süßer Ricotta. Eine Institution seit 1940.</p>
+                                <span class="tag food">Süßes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3: Monreale & Roadtrip Start -->
                 <div class="day-card" data-date="2026-07-24">
                     <div class="day-header">
-                        <h2 class="day-title">Tag 3: Start des Roadtrips</h2>
+                        <h2 class="day-title">Tag 3: Monreale &amp; Fahrt nach Taormina</h2>
                         <span class="day-date">24. Juli 2026</span>
                     </div>
                     <div class="timeline">
                         <div class="timeline-item">
+                            <div class="timeline-time">09:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=800&q=80" alt="Monreale Kathedrale" class="location-image" loading="lazy" />
+                                <h3>Kathedrale von Monreale</h3>
+                                <p>Nur wenige Kilometer von Palermo entfernt: Das Meisterwerk normannischer Baukunst mit 6.000 m² goldenen Mosaiken – gehört zum UNESCO-Welterbe.</p>
+                                <span class="tag highlight">UNESCO</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
                             <div class="timeline-time">11:00</div>
                             <div class="timeline-content">
                                 <h3>Mietwagen-Abholung</h3>
-                                <p>
-                                    Sunny Cars / Drivalia (Viale Francia 3/C,
-                                    Palermo).
-                                </p>
+                                <p>Sunny Cars / Drivalia (Viale Francia 3/C, Palermo). Check Kratzer dokumentieren!</p>
                                 <span class="tag transport">Auto</span>
                             </div>
                         </div>
@@ -183,119 +242,395 @@
                             <div class="timeline-time">14:00</div>
                             <div class="timeline-content">
                                 <h3>Fahrt nach Taormina</h3>
-                                <p>Check-in Casa Cuseni (3 Nächte).</p>
-                                <span class="tag highlight">Taormina</span>
+                                <p>Ca. 3 Stunden über die Autostrada A19. Check-in Casa Cuseni (3 Nächte).</p>
+                                <span class="tag transport">Fahrt</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">19:30</div>
+                            <div class="timeline-content">
+                                <h3>Abendessen bei Tischi Toschi</h3>
+                                <p>Authentisch sizilianisch im Herzen von Taormina. Liebenswertes Lokal mit hausgemachter Pasta und lokalen Weinen. Reservierung empfohlen!</p>
+                                <span class="tag food">Dinner</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Route Summary -->
-                <div class="day-card">
+                <!-- Day 4: Taormina -->
+                <div class="day-card" data-date="2026-07-25">
                     <div class="day-header">
-                        <h2 class="day-title">Die Route im Überblick</h2>
+                        <h2 class="day-title">Tag 4: Taormina &amp; Castelmola</h2>
+                        <span class="day-date">25. Juli 2026</span>
                     </div>
                     <div class="timeline">
                         <div class="timeline-item">
-                            <div class="timeline-time">22.07. – 24.07.</div>
+                            <div class="timeline-time">09:00</div>
                             <div class="timeline-content">
-                                <img
-                                    src="https://images.unsplash.com/photo-1541329164087-0283eda68eda?w=800&q=80"
-                                    alt="Palermo"
-                                    class="location-image"
-                                    loading="lazy"
-                                />
-                                <h3>Palermo</h3>
-                                <p>
-                                    2 Nächte im Quintocanto Hotel & Spa.
-                                    Altstadt, Streetfood & Kultur.
-                                </p>
+                                <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=800&q=80" alt="Teatro Greco Taormina" class="location-image" loading="lazy" />
+                                <h3>Teatro Greco zur Öffnung</h3>
+                                <p><strong>Insider-Tipp:</strong> Um 9 Uhr vor dem Tor stehen, bevor die Kreuzfahrer kommen! Der Blick auf den Ätna und die Bucht von Giardini-Naxos ist grandios. Goethe nannte ihn den schönsten Platz der Welt. Eintritt ca. €10.</p>
+                                <span class="tag highlight">Must-See</span>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-time">24.07. – 27.07.</div>
+                            <div class="timeline-time">11:00</div>
                             <div class="timeline-content">
-                                <img
-                                    src="https://images.unsplash.com/photo-1523594132173-05996328bc6e?w=800&q=80"
-                                    alt="Taormina"
-                                    class="location-image"
-                                    loading="lazy"
-                                />
-                                <h3>Taormina</h3>
-                                <p>
-                                    3 Nächte im Casa Cuseni. Antikes Theater,
-                                    Isola Bella & Etna-Blick.
-                                </p>
+                                <h3>Flanieren am Corso Umberto</h3>
+                                <p>Taorminas Hauptstraße mit Boutiquen, Gelaterien und der Piazza IX Aprile. Granita bei <strong>BamBar</strong> – die beste der Stadt!</p>
+                                <span class="tag drink">Aperitivo</span>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-time">27.07. – 30.07.</div>
+                            <div class="timeline-time">15:00</div>
                             <div class="timeline-content">
-                                <img
-                                    src="https://images.unsplash.com/photo-1621617260555-f126588283a0?w=800&q=80"
-                                    alt="Ragusa Ibla"
-                                    class="location-image"
-                                    loading="lazy"
-                                />
-                                <h3>Puntarazzi (Ragusa)</h3>
-                                <p>
-                                    3 Nächte im Artemisia Resort. Sizilianischer
-                                    Barock & Ragusa Ibla.
-                                </p>
+                                <img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&q=80" alt="Isola Bella" class="location-image" loading="lazy" />
+                                <h3>Isola Bella</h3>
+                                <p>Kleine Meeresinsel bei Ebbe über eine schmale Landzunge erreichbar. Naturreservat mit kristallklarem Wasser – perfekt für einen Nachmittagsschwimmen.</p>
+                                <span class="tag highlight">Natur</span>
                             </div>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-time">30.07. – 01.08.</div>
+                            <div class="timeline-time">18:30</div>
                             <div class="timeline-content">
-                                <img
-                                    src="https://images.unsplash.com/photo-1565622837305-6f3803f2622a?w=800&q=80"
-                                    alt="Scala dei Turchi"
-                                    class="location-image"
-                                    loading="lazy"
-                                />
-                                <h3>Realmonte (Agrigento)</h3>
-                                <p>
-                                    2 Nächte im Borgo Giallonardo. Tal der
-                                    Tempel & Scala dei Turchi.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">01.08. – 05.08.</div>
-                            <div class="timeline-content">
-                                <img
-                                    src="https://images.unsplash.com/photo-1552554625-2e69738d21ed?w=800&q=80"
-                                    alt="Marsala"
-                                    class="location-image"
-                                    loading="lazy"
-                                />
-                                <h3>Marsala</h3>
-                                <p>
-                                    4 Nächte im Suite Beach B&B. Salinen, Wein &
-                                    Sonnenuntergänge.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-time">05.08. – 08.08.</div>
-                            <div class="timeline-content">
-                                <img
-                                    src="https://images.unsplash.com/photo-1590756254933-2873d72a83b6?w=800&q=80"
-                                    alt="Castellammare del Golfo"
-                                    class="location-image"
-                                    loading="lazy"
-                                />
-                                <h3>Castellammare del Golfo</h3>
-                                <p>
-                                    3 Nächte im Atrium. Abschluss am Meer &
-                                    Zingaro Reservat.
-                                </p>
+                                <h3>Sonnenuntergang in Castelmola</h3>
+                                <p>Bus oder Taxi hinauf zum malerischen Bergdorf über Taormina. Mandelwein auf der Dachterrasse der <strong>Pizzeria Nina</strong> – atemberaubender Blick.</p>
+                                <span class="tag drink">Sonnenuntergang</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Departure -->
+                <!-- Day 5: Ätna -->
+                <div class="day-card" data-date="2026-07-26">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 5: Ätna-Ausflug</h2>
+                        <span class="day-date">26. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">08:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80" alt="Ätna" class="location-image" loading="lazy" />
+                                <h3>Auf zum Ätna</h3>
+                                <p>Europas größter aktiver Vulkan. Mit dem Auto bis Rifugio Sapienza (1.900 m), dann optional Seilbahn + Geländewagen zum Gipfelkrater (ca. €68). Oder Wanderung um die Silvestri-Krater.</p>
+                                <span class="tag highlight">Natur</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">13:00</div>
+                            <div class="timeline-content">
+                                <h3>Weinverkostung an den Ätna-Hängen</h3>
+                                <p>Die vulkanischen Böden produzieren herausragende Weine. <strong>Passopisciaro</strong> oder <strong>Tascante</strong> besuchen – beides Weingüter der Spitzenklasse. Reservierung nötig!</p>
+                                <span class="tag drink">Wein</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">17:00</div>
+                            <div class="timeline-content">
+                                <h3>Rückkehr nach Taormina</h3>
+                                <p>Letzter Abend in Taormina. Dinner bei <strong>Da Giovanni</strong> – chic am Meer mit fast kitschigem Blick auf die Isola Bella.</p>
+                                <span class="tag food">Dinner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 6: Fahrt Ragusa -->
+                <div class="day-card" data-date="2026-07-27">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 6: Fahrt nach Ragusa Ibla</h2>
+                        <span class="day-date">27. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">10:00</div>
+                            <div class="timeline-content">
+                                <h3>Abschied von Taormina</h3>
+                                <p>Arancini bei <strong>Da Cristina</strong> (Via Strabone, 2) für unterwegs – die besten der Stadt!</p>
+                                <span class="tag food">Streetfood</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1476973422084-e0fa66ff9456?w=800&q=80" alt="Ragusa Ibla" class="location-image" loading="lazy" />
+                                <h3>Ankunft in Ragusa Ibla</h3>
+                                <p>Check-in Artemisia Resort (3 Nächte). Erkundung des Barockjuwels Ragusa Ibla – enge Gassen, der majestätische Duomo San Giorgio und ein ruhiges Ambiente.</p>
+                                <span class="tag highlight">Barock</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:00</div>
+                            <div class="timeline-content">
+                                <h3>Abendessen bei Locanda Don Serafino</h3>
+                                <p>Im Felsen gebautes Restaurant mit Stern – authentische sizilianische Küche in einzigartiger Atmosphäre. Reservierung unbedingt erforderlich!</p>
+                                <span class="tag food">Fine Dining</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 7: Modica & Scicli -->
+                <div class="day-card" data-date="2026-07-28">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 7: Modica, Scicli &amp; Montalbano</h2>
+                        <span class="day-date">28. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">10:00</div>
+                            <div class="timeline-content">
+                                <h3>Modica – Schokoladenhauptstadt</h3>
+                                <p>UNESCO-Barock und berühmte <em>cioccolata modicana</em> (körnige Kaltverarbeitung). <strong>Antica Dolceria Bonajuto</strong> besuchen – älteste Schokoladenmanufaktur Siziliens (1880).</p>
+                                <span class="tag food">Schokolade</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:00</div>
+                            <div class="timeline-content">
+                                <h3>Scicli – Filmkulisse</h3>
+                                <p>Barockes Städtchen, das als Drehort für die Serie „Il Commissario Montalbano" dient. Piazza Italia und das Rathaus sind aus dem TV bekannt.</p>
+                                <span class="tag highlight">Kultur</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">17:00</div>
+                            <div class="timeline-content">
+                                <h3>Punta Secca</h3>
+                                <p>Ruhiges Fischerdorf mit dem Leuchtturm aus der Serie. Spaziergang am Strand und Aperitivo mit Meerblick.</p>
+                                <span class="tag highlight">Meer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 8: Strandtag -->
+                <div class="day-card" data-date="2026-07-29">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 8: Strandtag Marina di Ragusa</h2>
+                        <span class="day-date">29. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">10:00</div>
+                            <div class="timeline-content">
+                                <h3>Tag am Meer</h3>
+                                <p>Faulenzen am langen Sandstrand von Marina di Ragusa. Das Wasser ist warm und kristallklar – perfekt für einen Erholungstag nach all dem Kulturprogramm.</p>
+                                <span class="tag highlight">Entspannung</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">13:00</div>
+                            <div class="timeline-content">
+                                <h3>Mittagessen am Hafen</h3>
+                                <p>Frischer Fisch in einer der Strandbars. <strong>Cozze</strong> (Muscheln) und <strong>spaghetti alle vongole</strong> bestellen!</p>
+                                <span class="tag food">Fisch</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 9: Scala dei Turchi -->
+                <div class="day-card" data-date="2026-07-30">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 9: Scala dei Turchi &amp; Tal der Tempel</h2>
+                        <span class="day-date">30. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">08:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=800&q=80" alt="Scala dei Turchi" class="location-image" loading="lazy" />
+                                <h3>Scala dei Turchi zum Sonnenaufgang</h3>
+                                <p>Die weißen Kalksteinterrassen bei Realmonte – besonders magisch in der Morgensonne. <strong>Tipp:</strong> Rutschig wenn nass! Baden im türkisblauen Wasser.</p>
+                                <span class="tag highlight">Natur</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">11:00</div>
+                            <div class="timeline-content">
+                                <h3>Fahrt zum Valle dei Templi</h3>
+                                <p>Ca. 20 Minuten nach Agrigent. Check-in Borgo Giallonardo (2 Nächte).</p>
+                                <span class="tag transport">Fahrt</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">17:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80" alt="Tal der Tempel" class="location-image" loading="lazy" />
+                                <h3>Tal der Tempel zur goldenen Stunde</h3>
+                                <p>Der Concordiatempel im Abendlicht ist unvergesslich. Acht griechische Tempel auf einem Terrain – nirgendwo außerhalb Griechenlands gibt es so viel. Gärten der Kolymbethra für ein Picknick.</p>
+                                <span class="tag highlight">UNESCO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 10: Weinstraße -->
+                <div class="day-card" data-date="2026-07-31">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 10: Weinstraße &amp; Agrigent</h2>
+                        <span class="day-date">31. Juli 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">10:00</div>
+                            <div class="timeline-content">
+                                <h3>Weinprobe bei Planeta oder Donnafugata</h3>
+                                <p>Die Region um Agrigent produziert herausragende Nero d'Avola. Geführte Verkostung in den historischen Weinkellern.</p>
+                                <span class="tag drink">Wein</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">15:00</div>
+                            <div class="timeline-content">
+                                <h3>Turkish Steps am Nachmittag</h3>
+                                <p>Zweiter Besuch der Scala dei Turchi – diesmal zum Baden. Die weißen Felsen leuchten im Sonnenlicht karibisch.</p>
+                                <span class="tag highlight">Baden</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:00</div>
+                            <div class="timeline-content">
+                                <h3>Dinner bei Trattoria Concordia</h3>
+                                <p>Lokale Küche nahe dem Tal der Tempel. Einfach, authentisch und preiswert.</p>
+                                <span class="tag food">Dinner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 11: Marsala -->
+                <div class="day-card" data-date="2026-08-01">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 11: Fahrt nach Marsala</h2>
+                        <span class="day-date">1. August 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">10:00</div>
+                            <div class="timeline-content">
+                                <h3>Abschied vom Süden</h3>
+                                <p>Fahrt entlang der Südküste Richtung Westen. Ca. 2,5 Stunden bis Marsala.</p>
+                                <span class="tag transport">Fahrt</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1464790719320-516ecd75af6c?w=800&q=80" alt="Salinen von Marsala" class="location-image" loading="lazy" />
+                                <h3>Check-in &amp; Salinen bei Sonnenuntergang</h3>
+                                <p>Suite Beach B&amp;B (4 Nächte). Die Salinen von Marsala und Trapani bei Sonnenuntergang sind spektakulär – rosa Wasser, weiße Windmühlen, Flamingos.</p>
+                                <span class="tag highlight">Fotospot</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:00</div>
+                            <div class="timeline-content">
+                                <h3>Abendessen bei Alagna Restaurant</h3>
+                                <p>Moderne sizilianische Küche mit Meerblick. Empfohlen: <em>couscous di pesce</em> – das arabische Erbe Siziliens auf dem Teller.</p>
+                                <span class="tag food">Dinner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 12-14: Marsala Erkundung (kompakt) -->
+                <div class="day-card" data-date="2026-08-02">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 12–14: Erice, Segesta &amp; Westküste</h2>
+                        <span class="day-date">2. – 4. August 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">Tag 12</div>
+                            <div class="timeline-content">
+                                <h3>Erice – Stadt über den Wolken</h3>
+                                <p>Malerisches mittelalterliches Bergstädtchen mit verwinkelten Kopfsteinpflastergassen. Von der Venus-Burg Blick über Trapani und das Meer. Süßes Mandelgebäck in den Patisserien probieren.</p>
+                                <span class="tag highlight">Bergdorf</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">Tag 13</div>
+                            <div class="timeline-content">
+                                <h3>Segesta – Einsamer Tempel</h3>
+                                <p>Der besterhaltene dorische Tempel Siziliens steht einsam auf einem Hügel. Keine Stadt, keine Touristenmassen – pure Magie. Fährt mit dem Shuttle hoch zum antiken Theater.</p>
+                                <span class="tag highlight">Antike</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">Tag 14</div>
+                            <div class="timeline-content">
+                                <h3>San Vito Lo Capo &amp; Strand</h3>
+                                <p>Einer der schönsten Strände Italiens – türkisblaues Wasser, weißer Sand. Cousine sizilianische mit frischem Thunfisch am Hafen essen.</p>
+                                <span class="tag highlight">Strand</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 15: Castellammare -->
+                <div class="day-card" data-date="2026-08-05">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 15: Fahrt nach Castellammare del Golfo</h2>
+                        <span class="day-date">5. August 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-time">10:00</div>
+                            <div class="timeline-content">
+                                <h3>Fahrt an der Nordküste</h3>
+                                <p>Ca. 1,5 Stunden über die Küstenstraße mit grandiosen Ausblicken. Check-in Atrium (3 Nächte).</p>
+                                <span class="tag transport">Fahrt</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">15:00</div>
+                            <div class="timeline-content">
+                                <img src="https://images.unsplash.com/photo-1590756254933-2873d72a83b6?w=800&q=80" alt="Castellammare del Golfo" class="location-image" loading="lazy" />
+                                <h3>Castellammare erkunden</h3>
+                                <p>Malersicher Fischerhafen mit farbenfrohen Booten, engen Gassen und einer arabisch-normannischen Burg. Aperitivo am Hafen mit Blick auf die Bucht.</p>
+                                <span class="tag highlight">Hafen</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">20:00</div>
+                            <div class="timeline-content">
+                                <h3>Dinner bei Tonnara di Scopello</h3>
+                                <p>Historische Thunfischfabrik in einer der malerischsten Buchten Siziliens. Atemberaubende Kulisse – perfekt für den letzten Urlaubsabschnitt.</p>
+                                <span class="tag food">Dinner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 16-17: Zingaro -->
+                <div class="day-card" data-date="2026-08-06">
+                    <div class="day-header">
+                        <h2 class="day-title">Tag 16–17: Zingaro Reservat &amp; Relax</h2>
+                        <span class="day-date">6. – 7. August 2026</span>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">Tag 16</div>
+                            <div class="timeline-content">
+                                <h3>Riserva Naturale dello Zingaro</h3>
+                                <p>Siziliens erster Naturpark – 7 km Küstenwanderweg mit versteckten Buchten und kristallklarem Wasser. Einstieg beim Parkplatz Nord (San Vito Lo Capo) oder Süd (Scopello). Badesachen mitnehmen!</p>
+                                <span class="tag highlight">Wandern</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">Tag 17</div>
+                            <div class="timeline-content">
+                                <h3>Abschlusstag am Meer</h3>
+                                <p>Letzter Tag zum Faulenzen. Kleine Bucht in der Nähe von Scopello suchen, ein letztes Mal sizilianisches Eis (Cassata!) genießen.</p>
+                                <span class="tag highlight">Entspannung</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 18: Rückreise -->
                 <div class="day-card" data-date="2026-08-08">
                     <div class="day-header">
                         <h2 class="day-title">Tag 18: Rückreise</h2>
@@ -303,21 +638,297 @@
                     </div>
                     <div class="timeline">
                         <div class="timeline-item">
+                            <div class="timeline-time">07:00</div>
+                            <div class="timeline-content">
+                                <h3>Frühe Abfahrt</h3>
+                                <p>Fahrt zum Flughafen Palermo (ca. 45 Minuten). Tanken nicht vergessen!</p>
+                                <span class="tag transport">Fahrt</span>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
                             <div class="timeline-time">07:40</div>
                             <div class="timeline-content">
                                 <h3>Mietwagen-Rückgabe</h3>
-                                <p>Abgabe bei Drivalia am Flughafen Palermo.</p>
+                                <p>Abgabe bei Drivalia am Flughafen Palermo. Check auf versteckte Kratzer.</p>
                             </div>
                         </div>
                         <div class="timeline-item">
                             <div class="timeline-time">09:40</div>
                             <div class="timeline-content">
                                 <h3>Rückflug nach Klagenfurt</h3>
-                                <p>
-                                    Via Wien (OS 564 / OS 109). Ankunft 14:00
-                                    Uhr.
-                                </p>
+                                <p>Via Wien (OS 564 / OS 109). Ankunft ca. 14:00 Uhr.</p>
                                 <span class="tag transport">Flug</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==================== RESTAURANTS ==================== -->
+            <section id="restaurants" class="section">
+                <div class="day-card">
+                    <div class="day-header">
+                        <h2 class="day-title">Restaurant-Empfehlungen</h2>
+                    </div>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.95rem;">
+                        Authentische Adressen von Locals und Reiseexperten – keine Touristenfallen.
+                    </p>
+                    <div class="restaurant-grid">
+                        <!-- Palermo -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=800&q=80" alt="Sizilianische Küche" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Gagini Restaurant</h3>
+                                <p class="restaurant-type">Palermo · Fine Dining</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Cassari 35, 90133 Palermo
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 091 589918
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                        Mo–Sa 19:30–23:00
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Reservierung empfohlen</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Moderne sizilianische Küche in historischem Ambiente. Gehört zu den besten Restaurants Palermos.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=800&q=80" alt="Sizilianisches Streetfood" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Focacceria San Francesco</h3>
+                                <p class="restaurant-type">Palermo · Streetfood-Legende</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Alessandro Paternostro 58, Palermo
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                        Täglich 09:00–23:30
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Seit 1834! Die besten Panelle (Kichererbsen-Frittieren) und Focaccia der Stadt. Ein Muss!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Taormina -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&q=80" alt="Wein und Meer" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Tischi Toschi</h3>
+                                <p class="restaurant-type">Taormina · Authentisch sizilianisch</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Vico Cuscona-Paladini, Taormina
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 0942 24803
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Reservierung empfohlen</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Liebenswertes Lokal abseits der Touristenmeile. Noch am ehesten authentische sizilianische Küche in Taormina.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=800&q=80" alt="Meeresfrüchte" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Da Giovanni</h3>
+                                <p class="restaurant-type">Taormina · Meerblick</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Nazionale 115, Taormina
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 0942 24903
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Reservierung unbedingt erforderlich</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Chic am Meer mit fast kitschigem Blick auf die Isola Bella. Ausgezeichnete Fischküche – perfekt für den letzten Taormina-Abend.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Ragusa -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Fine Dining" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Locanda Don Serafino</h3>
+                                <p class="restaurant-type">Ragusa Ibla · Sterne-Restaurant</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Avvocato Giovanni Ottaviano 13, Ragusa
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 0932 248895
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Wochen im Voraus reservieren!</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Im Felsen gebaut, Michelin-ausgezeichnet. Authentische sizilianische Küche in einzigartiger Höhlen-Atmosphäre.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80" alt="Pasta" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Ristorante Duomo</h3>
+                                <p class="restaurant-type">Ragusa Ibla · Gourmet</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Capitano Bocchieri 31, Ragusa Ibla
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 0932 651265
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Elegante Interpretation traditioneller sizilianischer Gerichte. Perfekte Lage inmitten von Ragusa Ibla.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Modica -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1548907040-4baa42d10919?w=800&q=80" alt="Schokolade" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Antica Dolceria Bonajuto</h3>
+                                <p class="restaurant-type">Modica · Schokolade</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Corso Umberto I 159, Modica
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                        Täglich 09:00–20:00
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Älteste Schokoladenmanufaktur Siziliens (seit 1880). Die körnige Modica-Schokolade ist einzigartig – probieren Sie Chili oder Zimt!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Agrigento -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Trattoria Concordia</h3>
+                                <p class="restaurant-type">Agrigento · Traditionell</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Porcello 8, Agrigento
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Einfache, authentische Küche nahe dem Tal der Tempel. Preiswert und herzlich – ideal nach einem langen Sightseeing-Tag.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Marsala -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=800&q=80" alt="Couscous" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Alagna Restaurant &amp; Lounge Bar</h3>
+                                <p class="restaurant-type">Marsala · Modern sizilianisch</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Lungomare Mediterraneo, Marsala
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 0923 969922
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Direkt am Meer mit Lounge-Atmosphäre. Besonders gut: Couscous di pesce – das arabische Erbe Siziliens.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Castellammare -->
+                        <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80" alt="Fisch" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
+                            <div class="restaurant-content">
+                                <h3 class="restaurant-name">Tonnara di Scopello</h3>
+                                <p class="restaurant-type">Scopello · Historische Thunfischfabrik</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Tonnara, Scopello
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 0924 541099
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <span class="urgent">Reservierung empfohlen</span>
+                                    </p>
+                                </div>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.5;">
+                                    Ehemalige Thunfischfabrik in einer der malerischsten Buchten Siziliens. Atemberaubende Kulisse für den Abschluss der Reise.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -331,102 +942,147 @@
                         <h2 class="day-title">Unsere Unterkünfte</h2>
                     </div>
                     <div class="restaurant-grid">
-                        <!-- Hotel 1 -->
                         <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1541329164087-0283eda68eda?w=800&q=80" alt="Palermo" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
                             <div class="restaurant-content">
-                                <h3 class="restaurant-name">
-                                    Quintocanto Hotel & Spa
-                                </h3>
-                                <p class="restaurant-type">
-                                    Palermo · 2 Nächte
-                                </p>
-                                <p class="restaurant-detail">
-                                    Corso Vittorio Emanuele 310, 90134 Palermo
-                                </p>
-                                <p class="restaurant-detail">
-                                    📞 +39 091 584913
-                                </p>
+                                <h3 class="restaurant-name">Quintocanto Hotel &amp; Spa</h3>
+                                <p class="restaurant-type">Palermo · 2 Nächte (22.–24.07.)</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Corso Vittorio Emanuele 310, 90134 Palermo
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 091 584913
+                                    </p>
+                                </div>
+                                <div class="map-container" style="margin-top: 1rem;">
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=13.355%2C38.113%2C13.365%2C38.118&amp;layer=mapnik&amp;marker=38.1155%2C13.36"></iframe>
+                                </div>
                             </div>
                         </div>
-                        <!-- Hotel 2 -->
+
                         <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=800&q=80" alt="Taormina" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
                             <div class="restaurant-content">
                                 <h3 class="restaurant-name">Casa Cuseni</h3>
-                                <p class="restaurant-type">
-                                    Taormina · 3 Nächte
-                                </p>
-                                <p class="restaurant-detail">
-                                    Via Leonardo da Vinci 5-7, 98039 Taormina
-                                </p>
-                                <p class="restaurant-detail">
-                                    📞 +39 0942 558111
-                                </p>
+                                <p class="restaurant-type">Taormina · 3 Nächte (24.–27.07.)</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Leonardo da Vinci 5-7, 98039 Taormina
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 0942 558111
+                                    </p>
+                                </div>
+                                <div class="map-container" style="margin-top: 1rem;">
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=15.282%2C37.847%2C15.292%2C37.852&amp;layer=mapnik&amp;marker=37.8495%2C15.287"></iframe>
+                                </div>
                             </div>
                         </div>
-                        <!-- Hotel 3 -->
+
                         <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1476973422084-e0fa66ff9456?w=800&q=80" alt="Ragusa" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
                             <div class="restaurant-content">
-                                <h3 class="restaurant-name">
-                                    Artemisia Resort
-                                </h3>
-                                <p class="restaurant-type">
-                                    Puntarazzi · 3 Nächte
-                                </p>
-                                <p class="restaurant-detail">
-                                    Via Enrico Caruso 13, 97100 Puntarazzi
-                                </p>
-                                <p class="restaurant-detail">
-                                    📞 +39 0932 642575
-                                </p>
+                                <h3 class="restaurant-name">Artemisia Resort</h3>
+                                <p class="restaurant-type">Puntarazzi · 3 Nächte (27.–30.07.)</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Enrico Caruso 13, 97100 Puntarazzi
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 0932 642575
+                                    </p>
+                                </div>
+                                <div class="map-container" style="margin-top: 1rem;">
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.70%2C36.95%2C14.71%2C36.96&amp;layer=mapnik&amp;marker=36.955%2C14.705"></iframe>
+                                </div>
                             </div>
                         </div>
-                        <!-- Hotel 4 -->
+
                         <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=800&q=80" alt="Scala dei Turchi" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
                             <div class="restaurant-content">
-                                <h3 class="restaurant-name">
-                                    Borgo Giallonardo
-                                </h3>
-                                <p class="restaurant-type">
-                                    Realmonte · 2 Nächte
-                                </p>
-                                <p class="restaurant-detail">
-                                    Contrada Giallonardo, 92010 Realmonte
-                                </p>
-                                <p class="restaurant-detail">
-                                    📞 +39 338 2886469
-                                </p>
+                                <h3 class="restaurant-name">Borgo Giallonardo</h3>
+                                <p class="restaurant-type">Realmonte · 2 Nächte (30.07.–01.08.)</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Contrada Giallonardo, 92010 Realmonte
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 338 2886469
+                                    </p>
+                                </div>
+                                <div class="map-container" style="margin-top: 1rem;">
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=13.45%2C37.31%2C13.46%2C37.32&amp;layer=mapnik&amp;marker=37.315%2C13.455"></iframe>
+                                </div>
                             </div>
                         </div>
-                        <!-- Hotel 5 -->
+
                         <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1464790719320-516ecd75af6c?w=800&q=80" alt="Marsala" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
                             <div class="restaurant-content">
-                                <h3 class="restaurant-name">
-                                    Suite Beach B&B and Resort
-                                </h3>
-                                <p class="restaurant-type">
-                                    Marsala · 4 Nächte
-                                </p>
-                                <p class="restaurant-detail">
-                                    Contrada Berbaro 737/A, 91025 Marsala
-                                </p>
-                                <p class="restaurant-detail">
-                                    📞 +39 338 6911515
-                                </p>
+                                <h3 class="restaurant-name">Suite Beach B&amp;B and Resort</h3>
+                                <p class="restaurant-type">Marsala · 4 Nächte (01.–05.08.)</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Contrada Berbaro 737/A, 91025 Marsala
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 338 6911515
+                                    </p>
+                                </div>
+                                <div class="map-container" style="margin-top: 1rem;">
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=12.42%2C37.80%2C12.44%2C37.82&amp;layer=mapnik&amp;marker=37.81%2C12.43"></iframe>
+                                </div>
                             </div>
                         </div>
-                        <!-- Hotel 6 -->
+
                         <div class="restaurant-card">
+                            <div class="restaurant-image-container">
+                                <img src="https://images.unsplash.com/photo-1590756254933-2873d72a83b6?w=800&q=80" alt="Castellammare" class="restaurant-image" loading="lazy" />
+                                <div class="restaurant-image-overlay"></div>
+                            </div>
                             <div class="restaurant-content">
                                 <h3 class="restaurant-name">Atrium</h3>
-                                <p class="restaurant-type">
-                                    Castellammare del Golfo · 3 Nächte
-                                </p>
-                                <p class="restaurant-detail">
-                                    Via Antonio Vivaldi 44, 91014 Castellammare
-                                </p>
-                                <p class="restaurant-detail">
-                                    📞 +39 333 6327021
-                                </p>
+                                <p class="restaurant-type">Castellammare del Golfo · 3 Nächte (05.–08.08.)</p>
+                                <div class="restaurant-details">
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Via Antonio Vivaldi 44, 91014 Castellammare
+                                    </p>
+                                    <p class="restaurant-detail">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                                        +39 333 6327021
+                                    </p>
+                                </div>
+                                <div class="map-container" style="margin-top: 1rem;">
+                                    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=12.88%2C38.02%2C12.89%2C38.03&amp;layer=mapnik&amp;marker=38.025%2C12.885"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -437,21 +1093,21 @@
             <section id="checklist" class="section">
                 <div class="day-card">
                     <div class="day-header">
-                        <h2 class="day-title">Checkliste</h2>
+                        <h2 class="day-title">Reise-Checkliste</h2>
                     </div>
                     <div class="checklist">
                         <div class="checklist-item" onclick="toggleCheck(this)">
                             <div class="checkbox"></div>
                             <div class="checklist-text">
                                 <h4>Internationaler Führerschein</h4>
-                                <p>Sicherheitshalber mitnehmen</p>
+                                <p>Sicherheitshalber mitnehmen – wird oft beim Mietwagen gefordert</p>
                             </div>
                         </div>
                         <div class="checklist-item" onclick="toggleCheck(this)">
                             <div class="checkbox"></div>
                             <div class="checklist-text">
                                 <h4>Kreditkarte für Mietwagen</h4>
-                                <p>Auf ausreichendes Limit achten (Kaution)</p>
+                                <p>Auf ausreichendes Limit achten (Kaution wird blockiert)</p>
                             </div>
                             <span class="priority high">Wichtig</span>
                         </div>
@@ -459,34 +1115,96 @@
                             <div class="checkbox"></div>
                             <div class="checklist-text">
                                 <h4>Restaurant-Reservierungen</h4>
-                                <p>
-                                    Besonders in Taormina und Palermo vorab
-                                    buchen
-                                </p>
+                                <p>Locanda Don Serafino, Da Giovanni, Tischi Toschi, Tonnara di Scopello</p>
+                            </div>
+                            <span class="priority high">Wichtig</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Ätna-Tour / Seilbahn buchen</h4>
+                                <p>Im Hochsommer schnell ausgebucht – online vorab sichern</p>
+                            </div>
+                            <span class="priority medium">Empfohlen</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Weingut-Verkostungen reservieren</h4>
+                                <p>Passopisciaro oder Tascante an den Ätna-Hängen</p>
+                            </div>
+                            <span class="priority medium">Empfohlen</span>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Sonnenschutz &amp; Wasserflasche</h4>
+                                <p>Sizilianischer Sommer ist heiß – besonders am Ätna und an der Scala dei Turchi</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Wander- oder Badeschuhe</h4>
+                                <p>Für Zingaro Reservat und die rutschigen Kalksteinterrassen</p>
+                            </div>
+                        </div>
+                        <div class="checklist-item" onclick="toggleCheck(this)">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">
+                                <h4>Offline-Karten herunterladen</h4>
+                                <p>Google Maps Offline für die Küstenstraße und abgelegene Orte</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- ==================== IMPRESSUM ==================== -->
-            <section id="impressum" class="section">
+            <!-- ==================== BACKUP ==================== -->
+            <section id="backup" class="section">
                 <div class="day-card">
                     <div class="day-header">
-                        <h2 class="day-title">Impressum</h2>
+                        <h2 class="day-title">Notfall &amp; nützliche Infos</h2>
                     </div>
                     <div class="emergency-card">
-                        <p><strong>Verantwortlich für den Inhalt:</strong></p>
-                        <p>
-                            Martin Danicek<br />
-                            E-Mail: martin@danicek.at
-                        </p>
+                        <p><strong>🚨 Notruf:</strong> 112 (EU-weit)</p>
+                        <p><strong>🚗 Mietwagen:</strong> Drivalia / Sunny Cars</p>
+                        <p><strong>📍 Viale Francia 3/C, Palermo</strong></p>
+                        <p style="margin-top: 1rem;"><strong>Flugdetails Hin:</strong></p>
+                        <p>OS 112 KLU–VIE 05:45</p>
+                        <p>Weiter Zürich–Palermo</p>
+                        <p style="margin-top: 1rem;"><strong>Flugdetails Rück:</strong></p>
+                        <p>OS 564 PMO–VIE 09:40</p>
+                        <p>OS 109 VIE–KLU, Ankunft ca. 14:00</p>
+                    </div>
 
-                        <p style="margin-top: 1rem">
-                            <strong>Haftungsausschluss:</strong><br />
-                            Diese Website dient ausschließlich privaten Zwecken
-                            zur Koordination der Familienreise.
-                        </p>
+                    <h3 style="font-family: 'Playfair Display', serif; margin: 2rem 0 1rem; color: var(--theme-primary);">Quick Links</h3>
+                    <div class="backup-grid">
+                        <div class="backup-card">
+                            <h4>🗺️ Navigation</h4>
+                            <p><a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+                            <p>Offline-Karten für Sizilien herunterladen!</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>⛽ Tanken</h4>
+                            <p>Eni, IP und Q8 sind die gängigsten Ketten. Tankstellen in Kleinstädten haben oft Mittagspause (13–16 Uhr).</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>🅿️ Parken</h4>
+                            <p>In Palermo und Taormina Parkhäuser nutzen. Blaue Linien = kostenpflichtig. Weiße Linien = meist gratis.</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>🌡️ Wetter</h4>
+                            <p>Im August 30–35°C tagsüber. Meerwassertemperatur ca. 26°C. Abends kühlt es kaum unter 25°C ab.</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>💶 Zahlung</h4>
+                            <p>Kreditkarte wird akzeptiert, aber in kleinen Trattorien und auf Märkten Cash bevorzugt. ATM = Bancomat.</p>
+                        </div>
+                        <div class="backup-card">
+                            <h4>📱 Internet</h4>
+                            <p>EU-Roaming gilt. In abgelegenen Gebieten (Zingaro, Ätna-Gipfel) schwacher Empfang.</p>
+                        </div>
                     </div>
                 </div>
             </section>

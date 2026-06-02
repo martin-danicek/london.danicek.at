@@ -53,7 +53,13 @@ function showSection(sectionId, btn, skipHistory) {
 // Handle browser back/forward and direct links
 function handleHash() {
   const hash = window.location.hash.slice(1);
-  const validSections = ["plan", "restaurants", "checklist", "backup"];
+  const validSections = [
+    "plan",
+    "restaurants",
+    "hotels",
+    "checklist",
+    "backup",
+  ];
   if (validSections.includes(hash)) {
     showSection(hash, null);
   } else if (!hash) {
