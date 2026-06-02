@@ -7,7 +7,7 @@ Eine statische Single-Page-Website zur Planung und Organisation einer 4-tägigen
 Dies ist eine **rein statische HTML-Website** für drei Reisende (Martin & Markus). Die Seite dient als digitaler Reisebegleiter mit tagesgenauem Programm, Restaurantkontakten, interaktiven Checklisten und Backup-Plänen.
 
 **Sprache:** Deutsch (gesamter Inhalt ist auf Deutsch)  
-**Domain:** london.danicek.at (konfiguriert in `CNAME`)  
+**Domain:** reisen.danicek.at (konfiguriert in `CNAME`)  
 **Zielzeitraum:** 30. April – 3. Mai 2026  
 **Hosting:** Statisch (GitHub Pages oder ähnlich)
 
@@ -32,7 +32,7 @@ Dies ist eine **rein statische HTML-Website** für drei Reisende (Martin & Marku
 ├── index.html          # Komplette Website (HTML + CSS + JS) ~2360 Zeilen
 ├── manifest.json       # PWA-Manifest
 ├── sw.js               # Service Worker für Offline-Unterstützung
-├── CNAME               # Domain-Konfiguration (london.danicek.at)
+├── CNAME               # Domain-Konfiguration (reisen.danicek.at)
 ├── CLAUDE.md           # Projekt-spezifische Agent-Anweisungen (graphify)
 ├── .gitignore          # Git-Ignore (nur .dropbox.attr)
 └── AGENTS.md           # Diese Datei
@@ -274,7 +274,7 @@ Im Backup-Tab befindet sich eine `.emergency-card` mit:
 
 ### Aktuelles Setup
 
-- **Domain:** london.danicek.at (konfiguriert in `CNAME`)
+- **Domain:** reisen.danicek.at (konfiguriert in `CNAME`)
 - **Hosting:** GitHub Pages (repository-basiert)
 - **SSL:** Automatisch (bei GitHub Pages)
 

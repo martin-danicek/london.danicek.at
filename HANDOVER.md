@@ -1,4 +1,4 @@
-# HANDOVER — london.danicek.at
+# HANDOVER — reisen.danicek.at
 **Session:** 1 | **Datum:** 2026-06-01 | **Thema:** Entfernung Buchungsdaten, HTTPS-Zwang & Impressum
 
 ## Was diese Session war
