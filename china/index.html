@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>China 2026 | Martin · Markus</title>
+    <meta name="description" content="Reiseplan für China - Guangzhou & Shenzhen, 6. bis 15. Februar 2026">
+    <meta name="theme-color" content="#8B0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="China 2026">
+    <meta property="og:title" content="Guangzhou & Shenzhen 2026">
+    <meta property="og:description" content="Reiseplan für China – 6. bis 15. Februar 2026">
+    <meta property="og:type" content="website">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🇨🇳%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            /* China-inspired Colour Palette */
+            --theme-primary: #8B0000;
+            --theme-primary-light: #A52A2A;
+            --theme-primary-dark: #5C0000;
+            --theme-accent: #C9A962;
+            --theme-accent-light: #DDBB70;
+            --theme-accent-dark: #A68B4B;
+            --theme-secondary: #1A2A42;
+            --theme-secondary-light: #2A3A52;
+            --theme-accent-opacity: rgba(201, 169, 98, 0.03);
+            --theme-secondary-opacity: rgba(26, 42, 66, 0.02);
+            --theme-accent-opacity-heavy: rgba(201, 169, 98, 0.12);
+            --hero-url: url('https://images.unsplash.com/photo-1548919973-5cef591cdbc9?w=1920&q=80');
+        }
+    </style>
+</head>
+<body data-trip-id="china2026">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-image" id="heroImage"></div>
+        <div class="hero-overlay"></div>
+        <div class="header-content">
+            <p class="header-eyebrow">10 Tage im Reich der Mitte</p>
+            <h1>Guangzhou <span class="header-ampersand">&</span> Shenzhen</h1>
+            <p class="subtitle">6. – 15. Februar 2026</p>
+            <hr class="gold-rule">
+            <div class="travelers">
+                <div class="traveler"><span class="traveler-dot"></span>Markus</div>
+                <div class="traveler"><span class="traveler-dot"></span>Martin</div>
+            </div>
+            <div class="countdown-container" data-start="2026-02-06T00:00:00" data-end="2026-02-15T23:59:00">
+                <div class="countdown" id="countdown"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </div>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-btn" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Home
+            </a>
+            <button class="nav-btn active" onclick="showSection('plan', this)">Tagesplan</button>
+            <button class="nav-btn" onclick="showSection('hotels', this)">Hotels</button>
+            <button class="nav-btn" onclick="showSection('restaurants', this)">Restaurants</button>
+            <button class="nav-btn" onclick="showSection('praktisch', this)">Praktisch</button>
+            <button class="nav-btn" onclick="showSection('checklist', this)">Checkliste</button>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+
+        <!-- ==================== TAGESPLAN ==================== -->
+        <section id="plan" class="section active">
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <a href="https://www.flightradar24.com" target="_blank" class="quick-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><circle cx="12" cy="12" r="10"/></svg>
+                    Flightradar24
+                </a>
+                <a href="https://www.trip.com" target="_blank" class="quick-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M8 3v18M16 3v18"/></svg>
+                    Zugtickets Trip.com
+                </a>
+                <a href="https://www.didiglobal.com" target="_blank" class="quick-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    DiDi
+                </a>
+                <a href="https://guide.michelin.com/cn/en" target="_blank" class="quick-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Michelin Guide China
+                </a>
+            </div>
+
+            <div class="trip-status" id="tripStatus" style="display: none;"></div>
+
+            <!-- DAY 1 -->
+            <div class="day-card" data-date="2026-02-06">
+                <div class="day-header">
+                    <h2 class="day-title">Freitag – Abflug München</h2>
+                    <span class="day-date">6. Februar 2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Morgens</div>
+                        <div class="timeline-content">
+                            <h3>Abflug München</h3>
+                            <p>Start der Reise mit Lufthansa LH 718 von München nach Seoul Incheon (ICN). Handgepäck optimieren – langer Tag mit Stopover.</p>
+                            <span class="tag transport">Flug</span>
+                            <span class="tag highlight">MUC → ICN</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Über Nacht</div>
+                        <div class="timeline-content">
+                            <h3>Nachtflug Richtung Seoul</h3>
+                            <p>Übernachtung im Flugzeug. Schlafmaske, Ohrstöpsel und Reisekissen mitnehmen.</p>
+                            <span class="tag transport">Langstrecke</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 2 -->
+            <div class="day-card" data-date="2026-02-07">
+                <div class="day-header">
+                    <h2 class="day-title">Samstag – Seoul Stopover</h2>
+                    <span class="day-date">7. Februar 2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">11:15</div>
+                        <div class="timeline-content">
+                            <img src="images/seoul/seoul-hongdae.jpg" alt="Hongdae Seoul" class="location-image" loading="lazy">
+                            <h3>Ankunft Seoul Incheon</h3>
+                            <p>Ankunft am Terminal 2 mit Asiana Airlines. Immigration und Zoll – nur Handgepäck, kein Warten am Gepäckband.</p>
+                            <span class="tag transport">Ankunft</span>
+                            <span class="tag highlight">ICN T2</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">11:45 – 12:45</div>
+                        <div class="timeline-content">
+                            <h3>AREX Express nach Seoul Station</h3>
+                            <p>Airport Railroad Express (AREX) vom Terminal 2 in die Stadt. Express: 43 Min, All-Stop: 53 Min für 4.750 KRW.</p>
+                            <span class="tag transport">Zug</span>
+                            <a href="https://www.arex.or.kr/main/eng/" target="_blank" class="btn" style="margin-top: 0.8rem;">AREX Info →</a>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">13:30 – 14:00</div>
+                        <div class="timeline-content">
+                            <img src="images/food/korean-street-food.jpg" alt="Korean Street Food" class="location-image" loading="lazy">
+                            <h3>Street Food in Hongdae</h3>
+                            <p>Tteokbokki, Hotteok, Kimbap und mehr in Seouls trendigstem Viertel rund um die Hongik University.</p>
+                            <span class="tag food">Street Food</span>
+                            <span class="tag highlight">Hongdae</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:00 – 18:00</div>
+                        <div class="timeline-content">
+                            <h3>Gebuchte Tour „Trendy Hub of Youth“</h3>
+                            <p>4-stündige Walking Tour durch Hongdae (Reservierung CT189820): Mural Street, Busking, K-Pop Shops, Mode und Cafés.</p>
+                            <span class="tag highlight">Tour</span>
+                            <span class="tag">CT189820</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:00 – 19:30</div>
+                        <div class="timeline-content">
+                            <h3>Freizeit in Hongdae</h3>
+                            <p>Zeit für letzte Souvenirs, K-Beauty Shopping oder ein Café, bevor es zurück zum Flughafen geht.</p>
+                            <span class="tag">Freizeit</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">21:00</div>
+                        <div class="timeline-content">
+                            <h3>Abflug nach Guangzhou</h3>
+                            <p>Asiana OZ 355 von Seoul ICN nach Guangzhou (CAN). Flugzeit ca. 3 Stunden, Ankunft ~23:30 Uhr Ortszeit (GMT+8).</p>
+                            <span class="tag transport">Flug</span>
+                            <span class="tag highlight">ICN → CAN</span>
+                            <a href="https://www.flightradar24.com/data/flights/oz355" target="_blank" class="btn" style="margin-top: 0.8rem;">Flightradar24 →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 3-7: Guangzhou -->
+            <div class="day-card" data-date="2026-02-08">
+                <div class="day-header">
+                    <h2 class="day-title">Sonntag bis Donnerstag – Guangzhou</h2>
+                    <span class="day-date">8. – 12. Februar 2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">So, 8. Feb – Nachts</div>
+                        <div class="timeline-content">
+                            <h3>Ankunft & Check-in Grand Hyatt</h3>
+                            <p>Landung in Guangzhou, Transfer zum Grand Hyatt Guangzhou in Zhujiang New Town. Check-in ab 14:00, Nachtankunft beachten.</p>
+                            <span class="tag">Hotel</span>
+                            <span class="tag highlight">Grand Hyatt</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Mo, 9. Feb</div>
+                        <div class="timeline-content">
+                            <img src="images/guangzhou/guangzhou-canton-tower-night.jpg" alt="Canton Tower" class="location-image" loading="lazy">
+                            <h3>Canton Tower & Pearl River Cruise</h3>
+                            <p>600 m hohes Wahrzeichen der Stadt mit atemberaubendem Blick. Abends optionale 1-stündige Nachtfahrt auf dem Perlfluss ab Dashatou Wharf.</p>
+                            <span class="tag highlight">Sightseeing</span>
+                            <span class="tag">Night View</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Di, 10. Feb</div>
+                        <div class="timeline-content">
+                            <img src="images/guangzhou/chen-clan-hall.jpg" alt="Chen Clan Ancestral Hall" class="location-image" loading="lazy">
+                            <h3>Chen Clan Hall, Shamian Island & Liwan Lake</h3>
+                            <p>Meisterwerke der Lingnan-Holzschnitzerei, koloniale Sandsteinbauten auf Shamian Island und traditionelle Gartenarchitektur am Liwan Lake.</p>
+                            <span class="tag highlight">Kultur</span>
+                            <span class="tag">Architektur</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Mi, 11. Feb</div>
+                        <div class="timeline-content">
+                            <img src="images/guangzhou/temple-six-banyan.jpg" alt="Temple of Six Banyan Trees" class="location-image" loading="lazy">
+                            <h3>Temple of Six Banyan Trees & Beijing Road</h3>
+                            <p>Antike 57 m hohe Blumenpagode aus dem Jahr 537 n. Chr., danach Bummeln und Essen auf der Beijing Road.</p>
+                            <span class="tag">Tempel</span>
+                            <span class="tag food">Dim Sum</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Do, 12. Feb – Vormittag</div>
+                        <div class="timeline-content">
+                            <h3>Abschiedsfrühstück & Zug nach Shenzhen</h3>
+                            <p>Letztes Dim Sum in Guangzhou, dann Hochgeschwindigkeitszug von Guangzhou South nach Shenzhen North/Futian (30–60 Min, 75–150 RMB).</p>
+                            <span class="tag transport">Zug</span>
+                            <span class="tag highlight">Chunyun beachten</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 8-10: Shenzhen -->
+            <div class="day-card" data-date="2026-02-12">
+                <div class="day-header">
+                    <h2 class="day-title">Donnerstag bis Samstag – Shenzhen</h2>
+                    <span class="day-date">12. – 14. Februar 2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Do, 12. Feb – Nachmittag</div>
+                        <div class="timeline-content">
+                            <h3>Check-in InterContinental Shenzhen</h3>
+                            <p>Ankunft im Futian CBD, Check-in im InterContinental Shenzhen. Danach erster Bummel durch die Tech-Metropole.</p>
+                            <span class="tag">Hotel</span>
+                            <span class="tag highlight">Futian</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Do, 12. Feb</div>
+                        <div class="timeline-content">
+                            <img src="images/shenzhen/huaqiangbei-market.jpg" alt="Huaqiangbei Market" class="location-image" loading="lazy">
+                            <h3>Huaqiangbei Electronics Market</h3>
+                            <p>Weltgrößter Elektronikmarkt: Gadgets, Komponenten, Drohnen-Zubehör. Ab 12 Uhr öffnen die meisten Händler.</p>
+                            <span class="tag highlight">Tech</span>
+                            <span class="tag">Shopping</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Fr, 13. Feb</div>
+                        <div class="timeline-content">
+                            <img src="images/shenzhen/dji-drone.jpg" alt="DJI Flagship Store" class="location-image" loading="lazy">
+                            <h3>DJI Store, Ping An Tower & OCT Loft</h3>
+                            <p>Weltgrößter DJI Flagship Store mit Flight-Simulator, Aussichtsplattform im 599 m hohen Ping An Finance Center, danach Street Art im OCT Loft Creative Park.</p>
+                            <span class="tag highlight">Drohnen</span>
+                            <span class="tag">Observation Deck</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Sa, 14. Feb</div>
+                        <div class="timeline-content">
+                            <img src="images/shenzhen/robotaxi.jpg" alt="Pony.ai Robotaxi" class="location-image" loading="lazy">
+                            <h3>Shenzhen Museum, Robotaxi & Bay Park</h3>
+                            <p>Vormittags Shenzhen Museum (gratis), danach Testfahrt mit Pony.ai Robotaxi in Nanshan/Futian, Abschluss am Shenzhen Bay Park.</p>
+                            <span class="tag highlight">Autonomous</span>
+                            <span class="tag">Natur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DAY 11: Return -->
+            <div class="day-card" data-date="2026-02-15">
+                <div class="day-header">
+                    <h2 class="day-title">Sonntag – Rückflug</h2>
+                    <span class="day-date">15. Februar 2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Vormittag</div>
+                        <div class="timeline-content">
+                            <h3>Check-out & Transfer zum Flughafen</h3>
+                            <p>Letzte Vorbereitungen, Gepäck packen und Transfer zum Flughafen Shenzhen oder Guangzhou für den Heimflug.</p>
+                            <span class="tag transport">Transfer</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Nachmittag</div>
+                        <div class="timeline-content">
+                            <h3>Rückflug Shanghai → München</h3>
+                            <p>Verbindung über Shanghai zurück nach München. Bis zum nächsten Abenteuer!</p>
+                            <span class="tag transport">Flug</span>
+                            <span class="tag highlight">Goodbye China</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== HOTELS ==================== -->
+        <section id="hotels" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Unterkünfte</h2>
+                </div>
+                <p class="section-intro">Beide Hotels liegen zentral und bieten Infinity Pool sowie Premiumlage mit Blick auf die Stadt.</p>
+
+                <div class="restaurant-grid">
+                    <!-- Grand Hyatt Guangzhou -->
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/guangzhou/grand-hyatt-guangzhou.jpg" alt="Grand Hyatt Guangzhou" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">Grand Hyatt Guangzhou</h3>
+                            <p class="restaurant-type">Guangzhou · 5 Sterne · Zhujiang New Town</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    12 Zhu Jiang Xi Lu, Tian He Qu, Guangzhou
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    8. – 12. Februar 2026 (4 Nächte)
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    Bestätigung Nr. 4434469168
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                    Blick auf Canton Tower, Infinity Pool
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <a href="https://www.hyatt.com/de-de/hotel/china/grand-hyatt-guangzhou/guanggh" target="_blank" class="btn">Website →</a>
+                                <a href="https://www.booking.com/hotel/cn/grand-hyatt-guangzhou.html" target="_blank" class="btn btn-secondary">Booking.com →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- InterContinental Shenzhen -->
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/shenzhen/intercontinental-shenzhen.jpg" alt="InterContinental Shenzhen" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">InterContinental Shenzhen</h3>
+                            <p class="restaurant-type">Shenzhen · 5 Sterne · Futian CBD</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    9009 Shennan Da Dao, Futian District, Shenzhen
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    12. – 15. Februar 2026 (3 Nächte)
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    Bestätigung Nr. IC-SZ-2026
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                    Civic Center Blick, Infinity Pool
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                <a href="https://www.ihg.com/intercontinental/hotels/us/en/shenzhen/szxha/hoteldetail" target="_blank" class="btn">Website →</a>
+                                <a href="https://www.booking.com/hotel/cn/intercontinental-shenzhen.html" target="_blank" class="btn btn-secondary">Booking.com →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== RESTAURANTS ==================== -->
+        <section id="restaurants" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Restaurants & Kulinarik</h2>
+                </div>
+                <p class="section-intro">Kantonesisches Dim Sum, Michelin-Sterne-Restaurants und lokale Institutionen in Guangzhou.</p>
+
+                <div class="restaurant-grid">
+                    <!-- Bing Sheng Mansion -->
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/guangzhou/guangzhou-dim-sum.jpg" alt="Dim Sum" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">⭐ Bing Sheng Mansion</h3>
+                            <p class="restaurant-type">Guangzhou · Michelin-Stern · Fine Dining Dim Sum</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    Guangzhou, Zhujiang New Town
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    Reservierung empfohlen
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    Exquisites Char Siu, Pineapple Buns, Weißer-Handschuh-Service
+                                </div>
+                            </div>
+                            <a href="https://guide.michelin.com/hk/en/selection/restaurants/bing-sheng-mansion" target="_blank" class="btn">Michelin Guide →</a>
+                        </div>
+                    </div>
+
+                    <!-- Tao Tao Ju -->
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/food/dim-sum-basket.jpg" alt="Dim Sum Basket" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">🏮 Tao Tao Ju</h3>
+                            <p class="restaurant-type">Guangzhou · Traditionell seit 1880</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    Shangxiajiu, Guangzhou
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    Vor 10 Uhr kommen!
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    Har Gow Spezialität, authentische Atmosphäre, günstige Preise
+                                </div>
+                            </div>
+                            <span class="tag highlight">Local Favorite</span>
+                        </div>
+                    </div>
+
+                    <!-- Dian Du De -->
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/food/chinese-dumplings.jpg" alt="Dumplings" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">🥟 Dian Du De</h3>
+                            <p class="restaurant-type">Guangzhou · Dumpling-Spezialist seit den 1930ern</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    Mehrere Standorte in Guangzhou
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    Handgemachte Dumplings, frische Zutaten, lokale Institution
+                                </div>
+                            </div>
+                            <span class="tag">Must-Try</span>
+                        </div>
+                    </div>
+
+                    <!-- Lian Xiang Lou -->
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/food/asian-dumplings.jpg" alt="Dumplings" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">🏛️ Lian Xiang Lou</h3>
+                            <p class="restaurant-type">Guangzhou · Historisch seit 1889</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    Nahe Yuexiu Park
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    Chrysanthemen-Dumplings, traditionelle Rezepte, historisches Ambiente
+                                </div>
+                            </div>
+                            <span class="tag">Historic</span>
+                        </div>
+                    </div>
+
+                    <!-- Guangzhou Restaurant -->
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/food/chinese-cuisine.jpg" alt="Cantonese Cuisine" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">🏢 Guangzhou Restaurant</h3>
+                            <p class="restaurant-type">Guangzhou · Cantonese Classics</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    Wenchang South Road
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    Umfassende kantonesische Karte, professioneller Service
+                                </div>
+                            </div>
+                            <span class="tag">Institution</span>
+                        </div>
+                    </div>
+
+                    <!-- Xin Xuan -->
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/food/chinese-street-food.jpg" alt="Chinese Street Food" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">🌟 Xin Xuan</h3>
+                            <p class="restaurant-type">Guangzhou · Moderne kantonesische Küche</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    Zhujiang New Town
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                                    Innovative Präsentation, gehobenes Ambiente, Reservierung nötig
+                                </div>
+                            </div>
+                            <span class="tag highlight">Michelin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PRAKTISCH ==================== -->
+        <section id="praktisch" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Praktisch & Vorbereitung</h2>
+                </div>
+
+                <!-- Chunyun Alert -->
+                <div class="emergency-card" style="background: linear-gradient(135deg, rgba(201, 169, 98, 0.1) 0%, rgba(139, 0, 0, 0.04) 100%); border-color: rgba(201, 169, 98, 0.3);">
+                    <h4 style="color: var(--theme-primary);">🧧 Chunyun-Warnung: 12. – 14. Februar 2026</h4>
+                    <p>Unsere Reise fällt mit der größten jährlichen Migration der Welt zusammen. Züge, U-Bahnen und Restaurants sind extrem überfüllt. Frühzeitig am Bahnhof sein (35–45 Min vor Abfahrt) und flexible Puffer einplanen.</p>
+                </div>
+
+                <!-- Transport -->
+                <h3 class="day-title" style="font-size: 1.2rem; margin: 2rem 0 1rem;">Transport</h3>
+                <div class="info-grid" style="margin-bottom: 2rem;">
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M8 3v18M16 3v18"/></svg>
+                        <div><strong>Guangzhou ↔ Shenzhen</strong>Hochgeschwindigkeitszug, 30–60 Min, 75–150 RMB</div>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                        <div><strong>DiDi</strong>Englische App, Alipay/WeChat-Zahlung, günstiger als Taxi</div>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        <div><strong>Metro</strong>Alipay „Metro Card“ oder QR-Code am Turnikel nutzen</div>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        <div><strong>Seoul AREX</strong>Incheon ↔ Seoul Station, 43–53 Min, 4.750–9.500 KRW</div>
+                    </div>
+                </div>
+
+                <!-- Apps -->
+                <h3 class="day-title" style="font-size: 1.2rem; margin: 2rem 0 1rem;">Apps & Bezahlung</h3>
+                <div class="emergency-card">
+                    <h4>💳 Alipay (empfohlen)</h4>
+                    <p>Vor Abflug installieren, mit Reisepass verifizieren und Kreditkarte hinterlegen. 3% Gebühr ab 200 RMB. Verifizierung kann 1–2 Tage dauern.</p>
+                </div>
+                <div class="info-grid" style="margin-bottom: 2rem;">
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <div><strong>Navigation</strong>Apple Maps (funktioniert ohne VPN) oder Amap für Android</div>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                        <div><strong>VPN / eSIM</strong>LetsVPN oder Nomad/Airalo eSIM für WhatsApp/Instagram</div>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h6"/></svg>
+                        <div><strong>Bargeld-Reserve</strong>500–1000 RMB für Notfälle trotz Cashless-Trend</div>
+                    </div>
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <div><strong>Visa</strong>China-Visum rechtzeitig beantragen!</div>
+                    </div>
+                </div>
+
+                <!-- Emergency -->
+                <h3 class="day-title" style="font-size: 1.2rem; margin: 2rem 0 1rem;">Notfallnummern</h3>
+                <div class="info-grid">
+                    <div class="emergency-card" style="text-align: center;">
+                        <div class="emergency-number">110</div>
+                        <p>Polizei</p>
+                    </div>
+                    <div class="emergency-card" style="text-align: center;">
+                        <div class="emergency-number">120</div>
+                        <p>Notarzt</p>
+                    </div>
+                    <div class="emergency-card" style="text-align: center;">
+                        <div class="emergency-number">119</div>
+                        <p>Feuerwehr</p>
+                    </div>
+                    <div class="emergency-card" style="text-align: center;">
+                        <div class="emergency-number" style="font-size: 1rem;">+86 10 6113 3600</div>
+                        <p>Österr. Botschaft</p>
+                    </div>
+                </div>
+
+                <!-- Weather -->
+                <h3 class="day-title" style="font-size: 1.2rem; margin: 2rem 0 1rem;">Wetter & Kleidung</h3>
+                <div class="emergency-card">
+                    <h4>🌡️ Februar-Wetter</h4>
+                    <p><strong>Guangzhou & Shenzhen:</strong> 15–25 °C, mild, oft bewölkt, gelegentlich Regen.<br><strong>Seoul:</strong> −5 bis 5 °C, kalt, möglicher Schnee.<br><strong>Tipp:</strong> Leichte Jacke, Pullover, Regenschirm, bequeme Sneakers und Powerbank mitnehmen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CHECKLISTE ==================== -->
+        <section id="checklist" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Reise-Checkliste</h2>
+                </div>
+                <div class="checklist">
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>China-Visum beantragen</h4><p>Rechtzeitig vor Abflug, ggf. Termin im Konsulat</p></div>
+                        <span class="priority high">Sofort</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Alipay einrichten & verifizieren</h4><p>Kreditkarte vor Abflug hinzufügen, Verifizierung dauert 1–2 Tage</p></div>
+                        <span class="priority high">Sofort</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>VPN / eSIM organisieren</h4><p>LetsVPN oder Nomad eSIM für Google/WhatsApp/Instagram</p></div>
+                        <span class="priority high">Vor Abflug</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Flüge checken & einchecken</h4><p>LH 718, OZ 355, Rückflug – Sitzplätze reservieren</p></div>
+                        <span class="priority medium">Wichtig</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Zug Guangzhou ↔ Shenzhen buchen</h4><p>Früh buchen wegen Chunyun-Periode</p></div>
+                        <span class="priority medium">Wichtig</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Bing Sheng Mansion reservieren</h4><p>Michelin-Dim Sum – früh reservieren</p></div>
+                        <span class="priority medium">Empfohlen</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>DiDi App installieren</h4><p>Englische Version, mit Alipay verknüpfen</p></div>
+                        <span class="priority low">Vor Ort</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Hotel-Adressen auf Chinesisch speichern</h4><p>Für Taxifahrer und Notfälle als Screenshot</p></div>
+                        <span class="priority medium">Wichtig</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Reiseapotheke packen</h4><p>Schmerzmittel, Desinfektion, persönliche Medikamente</p></div>
+                        <span class="priority low">Packen</span>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Universal-Adapter & Powerbank</h4><p>Typ A/C/I (220V), Powerbank für lange Tage</p></div>
+                        <span class="priority low">Packen</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>Gemacht mit <span class="footer-heart">♥</span> für</p>
+        <p class="footer-names">Martin · Markus</p>
+        <p class="footer-date">Guangzhou & Shenzhen · 06. – 15.02.2026</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>

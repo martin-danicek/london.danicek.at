@@ -9,7 +9,7 @@ if (
 
 // Service Worker Registration
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("../sw.js").catch(() => {});
+  navigator.serviceWorker.register("/sw.js").catch(() => {});
 }
 
 // Navigation with deep-linking
@@ -20,7 +20,9 @@ function showSection(sectionId, btn, skipHistory) {
   document
     .querySelectorAll(".nav-btn")
     .forEach((b) => b.classList.remove("active"));
-  document.getElementById(sectionId).classList.add("active");
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+  section.classList.add("active");
 
   if (btn) {
     btn.classList.add("active");
@@ -59,6 +61,9 @@ function handleHash() {
     "hotels",
     "checklist",
     "backup",
+    "info",
+    "praktisch",
+    "impressum",
   ];
   if (validSections.includes(hash)) {
     showSection(hash, null);

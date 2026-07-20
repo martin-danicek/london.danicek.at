@@ -1,29 +1,22 @@
 # HANDOVER — reisen.danicek.at
-**Session:** 1 | **Datum:** 2026-06-01 | **Thema:** Entfernung Buchungsdaten, HTTPS-Zwang & Impressum
 
-## Was diese Session war
-Diese Session fokussierte sich auf den Schutz privater Daten und die rechtliche Absicherung der Reise-Website.
-- ✅ **Buchungsdaten entfernt:** Buchungscodes (8IJSWG) und Nummern (5589835798) in `vilnius/index.html` gelöscht/ersetzt.
-- ✅ **HTTPS erzwungen:** Automatischer JS-Redirect in `js/main.js` implementiert; alle Links auf HTTPS umgestellt.
-- ✅ **Impressum & Datenschutz:** Rechtlicher Hinweis in allen Dateien hinzugefügt (Standard-Sektion für private Reisen).
-- ✅ **Reisende aktualisiert:** "Marion" aus dem Kontext entfernt; Fokus nun auf Martin & Markus.
+## Letzte große Änderung
+Zusammenführung der Reise-Repos `london.danicek.at`, `china.danicek.at` und `zypern.danicek.at` in ein gemeinsames Portal unter `reisen.danicek.at`.
 
-## Aktueller Stand
-**🟢 Projekt:** Online und sicher.
-- Alle 3 Hauptseiten (`index.html`, `london/index.html`, `vilnius/index.html`) sind synchronisiert.
-- PWA und Offline-Support sind aktiv.
+## Struktur
+- `index.html` – Portal mit Kacheln für alle Reisen
+- `london/`, `barcelona/`, `sicily/`, `vilnius/` – Bestehende Reisen
+- `china/` – Neu: Guangzhou & Shenzhen 2026
+- `zypern/` – Neu: Zypern 2025/26 (vergangene Reise)
+- `css/style.css`, `js/main.js` – Gemeinsame Assets
 
-## Offene Tasks (nach Priorität)
-1. **[Kurzfristig]** Visueller Check des neuen Impressum-Buttons auf Mobilgeräten.
-2. **[Mittelfristig]** Automatisierung der Impressum-Generierung für zukünftige Reisen (Sub-Ordner).
+## Wichtige Regeln
+1. **Keine Buchungscodes/PNRs im Klartext**
+2. **HTTPS-First:** Keine `http://` Ressourcen einbinden
+3. Service Worker wird über `/sw.js` registriert
+4. Jede Reise hat ein eigenes `data-trip-id` für Checklisten-Persistenz
 
-## Akkumulierte Don't-Touch-Regeln
-1. **Keine Buchungscodes im Klartext:** Niemals PNRs oder Ticketnummern in den HTML-Code schreiben.
-2. **HTTPS-First:** Keine `http://` Ressourcen einbinden, da der Service Worker sonst blockiert.
-
-## Einstiegspunkt nächste Session
-Dateien die als erstes gelesen werden sollten:
-1. `index.html` — Navigation & Impressum-Logik.
-2. `js/main.js` — HTTPS-Redirect.
-
-→ Graph aktuell (durch graphify hook)
+## Offene Tasks
+- [ ] GitHub-Repository `london.danicek.at` → `reisen.danicek.at` umbenennen
+- [ ] Alte Repos (`china.danicek.at`, `zypern.danicek.at`, `london.danicek.at`) löschen
+- [ ] Smoke-Test nach Deploy

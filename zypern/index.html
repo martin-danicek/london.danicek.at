@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zypern 2025/26 | Martin · Markus · Claudia · Christoph</title>
+    <meta name="description" content="Rückblick auf unsere Zypern-Reise vom 26. Dezember 2025 bis 2. Januar 2026">
+    <meta name="theme-color" content="#0A4A3B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Zypern 2025/26">
+    <meta property="og:title" content="Zypern 2025/26">
+    <meta property="og:description" content="Rückblick auf unsere Zypern-Reise – Larnaca & Paphos">
+    <meta property="og:type" content="website">
+    <link rel="manifest" href="../manifest.json">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🇨🇾%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        :root {
+            /* Mediterranean Cyprus Palette */
+            --theme-primary: #0A4A3B;
+            --theme-primary-light: #1A5A4B;
+            --theme-primary-dark: #063B2F;
+            --theme-accent: #C9A962;
+            --theme-accent-light: #DDBB70;
+            --theme-accent-dark: #A68B4B;
+            --theme-secondary: #8B4513;
+            --theme-secondary-light: #A0522D;
+            --theme-accent-opacity: rgba(201, 169, 98, 0.03);
+            --theme-secondary-opacity: rgba(139, 69, 19, 0.02);
+            --theme-accent-opacity-heavy: rgba(201, 169, 98, 0.12);
+            --hero-url: url('images/hero-cyprus-sunset.jpg');
+        }
+        .past-trip-badge {
+            display: inline-block;
+            background: var(--theme-secondary);
+            color: #fff;
+            padding: 0.4rem 1rem;
+            border-radius: 2px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body data-trip-id="zypern2025">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-image" id="heroImage"></div>
+        <div class="hero-overlay"></div>
+        <div class="header-content">
+            <p class="header-eyebrow">Rückblick auf unsere Reise nach</p>
+            <h1>Zypern</h1>
+            <p class="subtitle">26. Dezember 2025 – 2. Januar 2026</p>
+            <span class="past-trip-badge">Vergangene Reise</span>
+            <hr class="gold-rule">
+            <div class="travelers">
+                <div class="traveler"><span class="traveler-dot"></span>Claudia</div>
+                <div class="traveler"><span class="traveler-dot"></span>Christoph</div>
+                <div class="traveler"><span class="traveler-dot"></span>Markus</div>
+                <div class="traveler"><span class="traveler-dot"></span>Martin</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </div>
+    </header>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-btn" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Home
+            </a>
+            <button class="nav-btn active" onclick="showSection('plan', this)">Tagesplan</button>
+            <button class="nav-btn" onclick="showSection('hotels', this)">Hotels</button>
+            <button class="nav-btn" onclick="showSection('restaurants', this)">Restaurants</button>
+            <button class="nav-btn" onclick="showSection('info', this)">Reiseinfos</button>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN ===== -->
+    <main>
+
+        <!-- ==================== TAGESPLAN ==================== -->
+        <section id="plan" class="section active">
+
+            <div class="quick-links">
+                <a href="https://www.austrian.com" target="_blank" class="quick-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><circle cx="12" cy="12" r="10"/></svg>
+                    Austrian Airlines
+                </a>
+                <a href="https://www.google.com/maps/dir/Larnaca,+Zypern/Paphos,+Zypern" target="_blank" class="quick-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                    Route Larnaca – Paphos
+                </a>
+                <a href="https://www.weather.com" target="_blank" class="quick-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    Wetter
+                </a>
+            </div>
+
+            <div class="day-card" data-date="2025-12-26">
+                <div class="day-header">
+                    <h2 class="day-title">Freitag – Anreise nach Larnaca</h2>
+                    <span class="day-date">26. Dezember 2025</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">12:30</div>
+                        <div class="timeline-content">
+                            <h3>Abflug Wien (VIE)</h3>
+                            <p>Austrian Airlines OS 795, direkt nach Larnaca (LCA).</p>
+                            <span class="tag transport">Flug</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">16:35</div>
+                        <div class="timeline-content">
+                            <h3>Ankunft Larnaca (LCA)</h3>
+                            <p>Boxing Day – die meisten Geschäfte und Museen sind geschlossen.</p>
+                            <span class="tag transport">Ankunft</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">17:30</div>
+                        <div class="timeline-content">
+                            <h3>Mietwagen abholen</h3>
+                            <p>Automatik empfohlen – Linksverkehr!</p>
+                            <span class="tag transport">Mietwagen</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">18:00</div>
+                        <div class="timeline-content">
+                            <img src="images/lordos-hotel.jpg" alt="Lordos Beach Hotel" class="location-image" loading="lazy">
+                            <h3>Check-in Lordos Beach Hotel</h3>
+                            <p>4 Nächte in Larnaca, Premium Superior Side Sea View Room.</p>
+                            <span class="tag">Hotel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-date="2025-12-27">
+                <div class="day-header">
+                    <h2 class="day-title">Samstag – Larnaca entdecken</h2>
+                    <span class="day-date">27. Dezember 2025</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Vormittag</div>
+                        <div class="timeline-content">
+                            <img src="images/larnaca-beach.jpg" alt="Larnaca Beach" class="location-image" loading="lazy">
+                            <h3>Finikoudes Beach &amp; Promenade</h3>
+                            <p>Entspannter Strandspaziergang entlang der Palmenpromenade.</p>
+                            <span class="tag highlight">Strand</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Nachmittag</div>
+                        <div class="timeline-content">
+                            <h3>St. Lazarus Kirche &amp; Altstadt</h3>
+                            <p>Byzantinische Kirche und gemütliche Altstadtgassen.</p>
+                            <span class="tag highlight">Kultur</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Abend</div>
+                        <div class="timeline-content">
+                            <h3>Meze im To Kazani</h3>
+                            <p>Traditionelles zypriotisches Meze in Aradippou.</p>
+                            <span class="tag food">Dinner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-date="2025-12-28">
+                <div class="day-header">
+                    <h2 class="day-title">Sonntag – Flamingos &amp; Salzsee</h2>
+                    <span class="day-date">28. Dezember 2025</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Vormittag</div>
+                        <div class="timeline-content">
+                            <h3>Larnaca Salt Lake</h3>
+                            <p>Flamingos beobachten am Salzsee – ein Winterhighlight.</p>
+                            <span class="tag highlight">Natur</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Mittag</div>
+                        <div class="timeline-content">
+                            <h3>Hala Sultan Tekke</h3>
+                            <p>Wichtiger islamischer Wallfahrtsort am Salzsee.</p>
+                            <span class="tag highlight">Kultur</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Abend</div>
+                        <div class="timeline-content">
+                            <img src="images/paphos-harbor-golden.jpg" alt="Paphos Hafen" class="location-image" loading="lazy">
+                            <h3>Fisch-Meze in Larnaca</h3>
+                            <p>Psarolimano Fish Tavern am Mackenzie-Hafen.</p>
+                            <span class="tag food">Dinner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-date="2025-12-29">
+                <div class="day-header">
+                    <h2 class="day-title">Montag – Troodos &amp; Weinberge</h2>
+                    <span class="day-date">29. Dezember 2025</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Ganztags</div>
+                        <div class="timeline-content">
+                            <img src="images/cyprus-village.jpg" alt="Zypriotisches Dorf" class="location-image" loading="lazy">
+                            <h3>Troodos-Gebirge</h3>
+                            <p>Ausflug ins Gebirge, malerische Dörfer und Weinberge.</p>
+                            <span class="tag highlight">Natur</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Mittag</div>
+                        <div class="timeline-content">
+                            <h3>Militzis</h3>
+                            <p>Zypriotische Klassiker wie Sheftalia im Stadtzentrum von Larnaca.</p>
+                            <span class="tag food">Lunch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-date="2025-12-30">
+                <div class="day-header">
+                    <h2 class="day-title">Dienstag – Transfer nach Paphos</h2>
+                    <span class="day-date">30. Dezember 2025</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Vormittag</div>
+                        <div class="timeline-content">
+                            <h3>Kourion</h3>
+                            <p>Antike Stadt mit Theater und Mosaiken – UNESCO-Welterbe.</p>
+                            <img src="images/kourion-theater.jpg" alt="Kourion Theater" class="location-image" loading="lazy">
+                            <span class="tag highlight">UNESCO</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Nachmittag</div>
+                        <div class="timeline-content">
+                            <h3>Fahrt nach Paphos</h3>
+                            <p>Entlang der Küste, ca. 1,5 Stunden (132–135 km).</p>
+                            <span class="tag transport">Auto</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">14:00</div>
+                        <div class="timeline-content">
+                            <img src="images/amphora-hotel.jpg" alt="Amphora Hotel" class="location-image" loading="lazy">
+                            <h3>Check-in Amphora Hotel &amp; Suites</h3>
+                            <p>3 Nächte in Paphos, Suite mit Meerblick.</p>
+                            <span class="tag">Hotel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-date="2025-12-31">
+                <div class="day-header">
+                    <h2 class="day-title">Mittwoch – Silvester in Paphos</h2>
+                    <span class="day-date">31. Dezember 2025</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Vormittag</div>
+                        <div class="timeline-content">
+                            <img src="images/paphos-castle.jpg" alt="Paphos Castle" class="location-image" loading="lazy">
+                            <h3>Paphos Archäologischer Park</h3>
+                            <p>Römische Mosaiken und antike Ausgrabungen – UNESCO-Welterbe.</p>
+                            <span class="tag highlight">UNESCO</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Nachmittag</div>
+                        <div class="timeline-content">
+                            <h3>Paphos Hafen</h3>
+                            <p>Gemütlicher Spaziergang, Geschäfte schließen früh (ca. 18:00).</p>
+                            <span class="tag">Stadt</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Abend</div>
+                        <div class="timeline-content">
+                            <h3>Silvester-Dinner</h3>
+                            <p>ALMAR Seafood Bar – Ceviche und gegrillter Oktopus am Strand.</p>
+                            <span class="tag food">Silvester</span>
+                            <span class="tag highlight">Reservierung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-date="2026-01-01">
+                <div class="day-header">
+                    <h2 class="day-title">Donnerstag – Entspannungstag</h2>
+                    <span class="day-date">1. Januar 2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Ganztags</div>
+                        <div class="timeline-content">
+                            <img src="images/blue-lagoon.jpg" alt="Blue Lagoon" class="location-image" loading="lazy">
+                            <h3>Blue Lagoon &amp; Akamas</h3>
+                            <p>1. Januar: fast alles geschlossen – perfekt für Natur &amp; Strand.</p>
+                            <span class="tag highlight">Natur</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">Optional</div>
+                        <div class="timeline-content">
+                            <img src="images/aphrodite-rock.jpg" alt="Aphrodite Rock" class="location-image" loading="lazy">
+                            <h3>Aphrodite's Rock</h3>
+                            <p>Der Geburtsort der Göttin Aphrodite an der Südküste.</p>
+                            <span class="tag highlight">Sightseeing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card" data-date="2026-01-02">
+                <div class="day-header">
+                    <h2 class="day-title">Freitag – Abreise</h2>
+                    <span class="day-date">2. Januar 2026</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-time">Vormittag</div>
+                        <div class="timeline-content">
+                            <img src="images/nissi-beach.jpg" alt="Nissi Beach" class="location-image" loading="lazy">
+                            <h3>Letzter Strandbesuch</h3>
+                            <p>Entspannter Vormittag am Strand von Paphos.</p>
+                            <span class="tag highlight">Strand</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">17:25</div>
+                        <div class="timeline-content">
+                            <h3>Rückflug Larnaca (LCA)</h3>
+                            <p>Austrian Airlines OS 796 zurück nach Wien (VIE).</p>
+                            <span class="tag transport">Flug</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-time">19:50</div>
+                        <div class="timeline-content">
+                            <h3>Ankunft Wien (VIE)</h3>
+                            <p>Ende eines wunderschönen Urlaubs. Καλή Χρονιά!</p>
+                            <span class="tag transport">Ankunft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ==================== HOTELS ==================== -->
+        <section id="hotels" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Unsere Unterkünfte</h2>
+                </div>
+                <p class="section-intro">Zwei wunderschöne Hotels am Mittelmeer.</p>
+                <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/lordos-hotel.jpg" alt="Lordos Beach Hotel" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">Lordos Beach Hotel</h3>
+                            <p class="restaurant-type">4 Nächte · Larnaca</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    8–9 km vom Stadtzentrum, 16 Min. vom Flughafen
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    Check-in: 26.12. · Check-out: 30.12.
+                                </div>
+                                <div class="restaurant-detail">
+                                    Premium Superior Side Sea View Room · Frühstück inklusive · Meerblick · Pool · hauseigener Sandstrand
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card">
+                        <div class="restaurant-image-container">
+                            <img src="images/amphora-hotel.jpg" alt="Amphora Hotel" class="restaurant-image" loading="lazy">
+                            <div class="restaurant-image-overlay"></div>
+                        </div>
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">Amphora Hotel &amp; Suites</h3>
+                            <p class="restaurant-type">3 Nächte · Paphos</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    15–20 Min. Fußweg zum Hafen, direkter Zugang zum Vrysoudia Beach
+                                </div>
+                                <div class="restaurant-detail">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    Check-in: 30.12. · Check-out: 02.01.
+                                </div>
+                                <div class="restaurant-detail">
+                                    Suite mit 1 Schlafzimmer mit Meerblick · separates Wohnzimmer · Pool · 2 Min. zum SODAP Beach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== RESTAURANTS ==================== -->
+        <section id="restaurants" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Restaurant-Empfehlungen</h2>
+                </div>
+                <p class="section-intro">Die besten Lokale für authentische zypriotische Küche.</p>
+                <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">To Kazani</h3>
+                            <p class="restaurant-type">Aradippou · Meze</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">Bestes Meze der Region, Kleftiko</div>
+                                <div class="restaurant-detail">Traditionelles Ambiente, Live-Musik</div>
+                                <div class="restaurant-detail">€25–35/Person</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card">
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">Psarolimano Fish Tavern</h3>
+                            <p class="restaurant-type">Mackenzie-Hafen · Meeresfrüchte</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">Fisch-Meze, Hummerflinguini</div>
+                                <div class="restaurant-detail">Panoramablick aufs Meer</div>
+                                <div class="restaurant-detail">€40–50/Person</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card">
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">Militzis</h3>
+                            <p class="restaurant-type">Stadtzentrum Larnaca · Zypriotisch</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">Sheftalia, zypriotische Klassiker</div>
+                                <div class="restaurant-detail">Zentrale Lage</div>
+                                <div class="restaurant-detail">€€</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card">
+                        <div class="restaurant-content">
+                            <h3 class="restaurant-name">ALMAR Seafood Bar</h3>
+                            <p class="restaurant-type">Paphos · Meeresfrüchte</p>
+                            <div class="restaurant-details">
+                                <div class="restaurant-detail">Ceviche, gegrillter Oktopus</div>
+                                <div class="restaurant-detail">Romantisch mit Kerzenlicht</div>
+                                <div class="restaurant-detail">€€€</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== REISEINFOS ==================== -->
+        <section id="info" class="section">
+            <div class="day-card">
+                <div class="day-header">
+                    <h2 class="day-title">Praktische Informationen</h2>
+                </div>
+
+                <h3 style="margin: 1.5rem 0 0.8rem; color: var(--theme-primary);">Flugdetails</h3>
+                <div class="emergency-card">
+                    <p><strong>Hinflug:</strong> OS 795, Fr. 26.12.2025, 12:30 Wien (VIE) → 16:35 Larnaca (LCA)</p>
+                    <p><strong>Rückflug:</strong> OS 796, Fr. 02.01.2026, 17:25 Larnaca (LCA) → 19:50 Wien (VIE)</p>
+                    <p style="margin-top: 0.5rem;"><strong>Flugzeug:</strong> Airbus A321 · Economy Light · Buchungsnummer: 7EAS8X</p>
+                </div>
+
+                <h3 style="margin: 1.5rem 0 0.8rem; color: var(--theme-primary);">Mietwagen &amp; Fahren</h3>
+                <div class="emergency-card">
+                    <p>🚗 <strong>Linksverkehr!</strong> Britisches System, Automatik empfohlen.</p>
+                    <p>Autobahn: 100 km/h, kostenlos · Landstraßen: 80 km/h · Ortschaften: 50 km/h</p>
+                    <p>Promillegrenze: 0,5 · Benzin: ca. €1,28–1,35/Liter</p>
+                </div>
+
+                <h3 style="margin: 1.5rem 0 0.8rem; color: var(--theme-primary);">Packliste</h3>
+                <div class="checklist">
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Steckdosenadapter Typ G</h4><p>Britische 3-polige Steckdosen</p></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Mehrere Schichten Kleidung</h4><p>17–19°C tagsüber, 8–10°C nachts</p></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Leichte Regenjacke</h4><p>7–12 Regentage im Dezember</p></div>
+                    </div>
+                    <div class="checklist-item" onclick="toggleCheck(this)">
+                        <div class="checkbox"></div>
+                        <div class="checklist-text"><h4>Fernglas</h4><p>Für Flamingos am Salzsee</p></div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 1.5rem 0 0.8rem; color: var(--theme-primary);">Mini-Sprachführer</h3>
+                <div class="emergency-card">
+                    <p><strong>Yiasas</strong> = Hallo · <strong>Efcharisto</strong> = Danke · <strong>Parakalo</strong> = Bitte/Gern</p>
+                    <p><strong>Kalimera</strong> = Guten Morgen · <strong>Kalispera</strong> = Guten Abend</p>
+                    <p><strong>Nero</strong> = Wasser · <strong>Logariasmo</strong> = Rechnung · <strong>Ne / Ochi</strong> = Ja / Nein</p>
+                </div>
+
+                <h3 style="margin: 1.5rem 0 0.8rem; color: var(--theme-primary);">Notfall</h3>
+                <div class="emergency-card">
+                    <p><strong>Notruf:</strong> 112 oder 199</p>
+                    <p><strong>Österr. Botschaft:</strong> +357 22 410151</p>
+                    <p><strong>Sperr-Notruf:</strong> +43 1 20900</p>
+                    <p><strong>Polizei:</strong> 1460 · <strong>Tourismus Paphos:</strong> +357 26 932 841</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>Gemacht mit <span class="footer-heart">♥</span> für</p>
+        <p class="footer-names">Claudia · Christoph · Markus · Martin</p>
+        <p class="footer-date">Zypern · 26.12.2025 – 02.01.2026</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+
+</body>
+</html>
